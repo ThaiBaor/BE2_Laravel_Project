@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,11 @@ Route::get('/', function () {
 Route::get('/test', FUNCTION () {
     RETURN view('test');
 });
+Route::get('listproduct', [ProductController::class, 'listProduct'])->name('listproduct');
+Route::get('addproduct', [ProductController::class, 'registrationProduct'])->name('addproduct');
+Route::post('customproduct', [ProductController::class, 'customProduct'])->name('registerproduct.custom');
+Route::get('getdataedt/id{id}', [ProductController::class, 'getDataEdit'])->name('getdataedt');
+Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('editproduct');
+Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
+Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
+
