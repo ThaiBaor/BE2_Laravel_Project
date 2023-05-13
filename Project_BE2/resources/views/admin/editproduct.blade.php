@@ -3,9 +3,9 @@
 <main class="signup-form">
     <div class="cotainer">
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-12">
                 <div class="card">
-                    <h3 class="card-header text-center">Register User</h3>
+                    <h3 class="card-header text-center">EDIT PRODUCT</h3>
                     <div class="card-body">
                         <form action="{{ route('editproduct') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -49,7 +49,7 @@
                                 <img src="{{URL::asset('uploads')}}/{{$getDataProductById[0]->photo}}" alt="" width="50">
                             </div>
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Sign up</button>
+                                <button type="submit" class="btn btn-dark btn-block">EDIT</button>
                             </div>
                         </form>
                     </div>

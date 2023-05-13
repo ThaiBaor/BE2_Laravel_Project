@@ -27,7 +27,7 @@
       <div CLASS="bg-white py-2 collapse-inner rounded">
         <h6 CLASS="collapse-header">Custom Components:</h6>
         <a CLASS="collapse-item" href="#">User</a>
-        <a CLASS="collapse-item" href="#">Product</a>
+        <a CLASS="collapse-item" href="{{route('listproduct')}}">Product</a>
         <a CLASS="collapse-item" href="#">Order</a>
       </div>
     </div>

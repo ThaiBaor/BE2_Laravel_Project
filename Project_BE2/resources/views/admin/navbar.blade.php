@@ -8,14 +8,14 @@
  
   <!-- Topbar Search -->
    
-    <div CLASS="input-group">
+    <!-- <div CLASS="input-group">
       <input type="text" CLASS="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
       <div CLASS="input-group-append">
         <button CLASS="btn btn-primary" type="button">
           <i CLASS="fas fa-search fa-sm"></i>
         </button>
       </div>
-    </div>
+    </div> -->
    
  
   <!-- Topbar Navbar -->
