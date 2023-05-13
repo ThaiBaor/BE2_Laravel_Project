@@ -1,13 +1,10 @@
-@INCLUDE('layout.header')
- 
- 
- 
+@INCLUDE('admin.header')
  
  
 <!-- Page Wrapper -->
 <div id="wrapper">
  
-  @INCLUDE('layout.sidebar')
+  @INCLUDE('admin.sidebar')
  
   <!-- Content Wrapper -->
   <div id="content-wrapper" CLASS="d-flex flex-column">
@@ -15,7 +12,7 @@
     <!-- Main Content -->
     <div id="content">
  
-        @INCLUDE('layout.navbar')
+        @INCLUDE('admin.navbar')
  
       <!-- Begin Page Content -->
       <div CLASS="container-fluid">
@@ -28,7 +25,7 @@
     </div>
     <!-- End of Main Content -->
  
-    @INCLUDE('layout.footer')
+    @INCLUDE('admin.footer')
  
   </div>
   <!-- End of Content Wrapper -->
@@ -36,4 +33,4 @@
 </div>
 <!-- End of Page Wrapper -->
  
-  @INCLUDE('layout.js')
+  @INCLUDE('admin.js')
