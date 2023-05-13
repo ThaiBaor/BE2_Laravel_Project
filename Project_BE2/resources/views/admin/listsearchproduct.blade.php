@@ -5,7 +5,7 @@
 <form action="{{ route('searchproduct') }}" method="GET">
   <div CLASS="input-group">
     @csrf
-    <input type="text" name= "keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+    <input type="text" name= "keyword" id= "keyword"CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
     <div CLASS="input-group-append">
       <button CLASS="btn btn-primary" type="submit">
         <i CLASS="fas fa-search fa-sm"></i>
@@ -16,7 +16,7 @@
   <!-- DataTales Example -->
   <div CLASS="card shadow mb-12">
     <div CLASS="card-header py-3">
-      <h6 CLASS="m-0 font-weight-bold text-primary">PRODUCT </h6>
+      <h6 CLASS="m-0 font-weight-bold text-primary">SEARCH RESULT </h6>
       <h6><a href="{{route('addproduct')}}" class="btn btn-primary">ADD PRODUCT</a></h6>
     </div>
     <div CLASS="card-body">
