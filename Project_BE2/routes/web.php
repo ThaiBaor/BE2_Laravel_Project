@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/test', FUNCTION () {
-    RETURN view('test');
+    return view('test');
 });
 Route::get('listproduct', [ProductController::class, 'listProduct'])->name('listproduct');
 Route::get('addproduct', [ProductController::class, 'registrationProduct'])->name('addproduct');
@@ -28,3 +28,18 @@ Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('e
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
 
+Route::get('/detail', FUNCTION () {
+    return view('detail');
+});
+Route::get('/shop', FUNCTION () {
+    return view('shop');
+});
+Route::get('/cart', FUNCTION () {
+    return view('cart');
+});
+Route::get('/checkout', FUNCTION () {
+    return view('checkout');
+});
+Route::get('/wishlist', FUNCTION () {
+    return view('wishlist');
+});

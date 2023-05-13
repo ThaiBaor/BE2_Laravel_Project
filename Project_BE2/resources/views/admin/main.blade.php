@@ -1,9 +1,6 @@
 @INCLUDE('admin.header')
  
  
- 
- 
- 
 <!-- Page Wrapper -->
 <div id="wrapper">
  
