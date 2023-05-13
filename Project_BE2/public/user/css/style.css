@@ -379,7 +379,7 @@ ol {
 }
 
 .header__top__hover ul {
-	background: #ffffff;
+	background: hwb(0 3% 96%);
 	display: inline-block;
 	padding: 2px 0;
 	position: absolute;
@@ -400,6 +400,13 @@ ol {
 	font-size: 13px;
 	color: #111111;
 	padding: 2px 15px;
+	cursor: pointer;
+}
+.header__top__hover ul li a{
+	list-style: none;
+	font-size: 13px;
+	color: #ffffff;
+	padding: 2px;
 	cursor: pointer;
 }
 
