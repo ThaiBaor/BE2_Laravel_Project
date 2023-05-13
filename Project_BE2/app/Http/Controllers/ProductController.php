@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\DB;
 //Unknow
 class ProductController extends Controller
 {
-
-
     public function registrationProduct()
     {
         return view('admin.addproduct');

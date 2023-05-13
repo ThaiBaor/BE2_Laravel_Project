@@ -8,7 +8,8 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
-
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/a4c0a518b5.js" crossorigin="anonymous"></script>
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('user/css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('user/css/font-awesome.min.css')}}" type="text/css">

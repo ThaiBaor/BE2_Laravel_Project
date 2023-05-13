@@ -8,10 +8,10 @@
 <div class="offcanvas-menu-wrapper">
     <div class="offcanvas__option">
         <div class="offcanvas__links">
-            <a href="#">Sign in</a>           
+            <a href="{{route('login')}}">Sign in</a>           
         </div>
         <div class="offcanvas__top__hover">
-            <span>Usd <i class="arrow_carrot-down"></i></span>
+            <span>Language<i class="arrow_carrot-down"></i></span>
             <ul>
                 <li><a class="active" href="">EngLish</a></li>
                 <li><a href="">Tiếng Việt</a></li>
@@ -44,12 +44,12 @@
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         <div class="header__top__links">
-                            <a href="#">Sign in</a>
+                            <a href="{{route('login')}}">Sign in</a>
                         </div>
                         <div class="header__top__hover">
                             <span>Language<i class="arrow_carrot-down"></i></span>
                             <ul>
-                                <li><a class="active" href="">EngLish</a></li>
+                                <li><a class="" href="">EngLish</a></li>
                                 <li><a href="">Tiếng Việt</a></li>
                             </ul>
                         </div>

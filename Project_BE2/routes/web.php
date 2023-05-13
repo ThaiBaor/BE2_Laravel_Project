@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,4 +56,7 @@ Route::get('/', function () {
 Route::get('/test', FUNCTION () {
     return view('test');
 });
+
+Route::get('login', [CustomAuthController::class, 'showFormLogin'])->name('login');
+Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 //-------------
