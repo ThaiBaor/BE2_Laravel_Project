@@ -7,7 +7,7 @@
                 <div class="card">
                     <h3 class="card-header text-center">ADD VOUCHER</h3>
                     <div class="card-body">
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('customvoucher.custom') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
                                 <input type="text" placeholder="Ma Voucher" id="mavoucher" class="form-control" name="mavoucher" required autofocus>
@@ -15,8 +15,14 @@
                                 <span class="text-danger">{{ $errors->first('mavoucher') }}</span>
                                 @endif
                             </div>
-                            <input type="date" placeholder="Create_at" id="create_at" name="create_at">
-                            <input type="date" placeholder="Expired_at" id="expired_at" name="expired_at">
+                            
+                            <div class="form-group mb-3">
+                                <input type="date" placeholder="Created Date" id="createddate" name="createddate"  required autofocus>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="date" placeholder="Expired Date" id="expireddate" name="expireddate" required autofocus>
+                            </div>
+
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">ADD VOUCHER</button>
                             </div>
