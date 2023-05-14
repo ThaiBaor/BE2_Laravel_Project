@@ -36,7 +36,7 @@ class VoucherController extends Controller
         $voucher->createddate = $newCreatedDate;
         $voucher->expireddate = $newExpiredDate;
         $voucher->save();
-        return redirect("listproduct");
+        return redirect("listvoucher");
     }
 
     public function createVoucher(array $data)
@@ -48,53 +48,45 @@ class VoucherController extends Controller
         ]);
     }
 
-    public function getDataEdit($id)
+    public function getDataEditVoucher($id)
     {
-        $getData = DB::table('products')->select('*')->where('id', $id)->get();
-        return view('admin.content.editproduct')->with('getDataProductById', $getData);
+        $getData = DB::table('vouchers')->select('*')->where('id', $id)->get();
+        return view('admin.content.editvoucher')->with('getDataVoucherById', $getData);
     }
 
-    public function updateProduct(Request $request)
-    {
-        $file = $request->file('photo');
-        $path = 'uploads';
-        $fileName = $file->getClientOriginalName();
-        $file->move($path, $fileName);
-
-        $updateData = DB::table('products')->where('id', $request->id)->update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'color' => $request->color,
-            'price' => $request->price,
-            'instock' => $request->instock,
-            'sold' => $request->sold,
-            'type' => $request->type,
-            'star' => $request->star,
-            'number_comment' => $request->number_comment,
-            'photo' => $fileName,
+    public function updateVoucher(Request $request)
+    { 
+        $createdDate = $request->createddate;
+        $newCreatedDate = date("Y-m-d", strtotime($createdDate));
+        $expiredDate = $request->expireddate;
+        $newExpiredDate = date("Y-m-d", strtotime($expiredDate));
+        $updateData = DB::table('vouchers')->where('id', $request->id)->update([
+            'mavoucher' => $request->mavoucher,
+            'createddate' => $newCreatedDate,
+            'expireddate' => $newExpiredDate,
         ]);
         //Thực hiện chuyển trang
-        return redirect('listproduct');
+        return redirect('listvoucher');
     }
 
 
-    public function deleteProduct($id)
+    public function deleteVoucher($id)
     {
-        $deleteData = DB::table('products')->where('id', '=', $id)->delete();
-        return redirect('listproduct');
+        $deleteData = DB::table('vouchers')->where('id', '=', $id)->delete();
+        return redirect('listvoucher');
     }
 
 
-    public function listProduct()
+    public function listVoucher()
     {
-        $products = DB::table('products')->paginate(4);
-        return view('admin.content.listproduct', compact('products'));
+        $vouchers = DB::table('vouchers')->paginate(4);
+        return view('admin.content.listvoucher', compact('vouchers'));
     }
 
-    public function searchProduct(Request $request)
+    public function searchVoucher(Request $request)
     {
         $keyword = $request->keyword;
-        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
-        return view('admin.content.listsearchproduct', compact('products'));
+        $vouchers = Voucher::where('mavoucher', 'LIKE', '%' . $keyword . '%')->paginate(4);
+        return view('admin.content.listsearchvoucher', compact('vouchers'));
     }
 }
