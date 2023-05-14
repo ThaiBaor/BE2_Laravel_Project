@@ -5,7 +5,7 @@
 <form action="{{ route('searchproduct') }}" method="GET">
   <div CLASS="input-group">
     @csrf
-    <input type="text" name= "keyword" id= "keyword"CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+    <input type="text" name= "keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
     <div CLASS="input-group-append">
       <button CLASS="btn btn-primary" type="submit">
         <i CLASS="fas fa-search fa-sm"></i>
@@ -16,7 +16,7 @@
   <!-- DataTales Example -->
   <div CLASS="card shadow mb-12">
     <div CLASS="card-header py-3">
-      <h6 CLASS="m-0 font-weight-bold text-primary">SEARCH RESULT </h6>
+      <h6 CLASS="m-0 font-weight-bold text-primary">PRODUCT </h6>
       <h6><a href="{{route('addproduct')}}" class="btn btn-primary">ADD PRODUCT</a></h6>
     </div>
     <div CLASS="card-body">
@@ -33,8 +33,8 @@
               <th>In stock</th>
               <th>Sold</th>
               <th>Type</th>
-              <th>Star</th>
-              <th>Number comment</th>
+              <th>Size</th>
+              
 
             </tr>
           </thead>
@@ -54,8 +54,7 @@
               <td>{{$product->instock}}</td>
               <td>{{$product->sold}}</td>
               <td>{{$product->type}}</td>
-              <td>{{$product->star}}</td>
-              <td>{{$product->number_comment}}</td>
+              <td>{{$product->size}}</td>
             </tr>
             @endforeach
           </tbody>

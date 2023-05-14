@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('mavoucher', 100);
             $table->date('createddate');
             $table->date('expireddate');
+            $table->integer('reduce');
             $table->timestamps();
+            
         });
     }
 
