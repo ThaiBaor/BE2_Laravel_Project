@@ -15,20 +15,20 @@ class CustomAuthController extends Controller
         return view('login');
     }
 
-    public function customLogin(Request $request)
+    public function submitlogin(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'name' => 'required',
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('name', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
+            return redirect()->intended('home')
                 ->withSuccess('Signed in');
         }
 
-        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect("login");
     }
 
     public function showFormRegistration()
@@ -36,16 +36,17 @@ class CustomAuthController extends Controller
         return view('registration');
     }
 
-    public function customRegistration(Request $request)
+    public function submitRegistration(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'password' => 'required|min:6',
+            'name' => 'required:unique|min:6',
+            'password' => 'required|min:4',
+            'password-confirm' => 'required|min:4|same:password',
         ]);
 
         $data = $request->all();
-        $check = $this->create($data);
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        $this->create($data);
+        return redirect()->route('login')->with('Success','Signup Success');
     }
 
     
@@ -60,17 +61,15 @@ class CustomAuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            return view('dashboard');
+            return view('home');
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
     }
 
     public function signOut() {
-        Session::flush();
         Auth::logout();
-
-        return Redirect('login');
+        return redirect('login');
     }
 
     public function listUser(){

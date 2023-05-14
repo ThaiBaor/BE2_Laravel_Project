@@ -30,7 +30,7 @@ Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])-
 
 // Category
 Route::get('/{shop}',[CategoryController::class, 'index'])->name('shop');
-Route::get('/{index}',[CategoryController::class, 'index'])->name('index');
+Route::get('/{home}',[CategoryController::class, 'index'])->name('home');
 //-----------
 
 
@@ -50,13 +50,21 @@ Route::get('/wishlist', FUNCTION () {
     return view('wishlist');
 });
 Route::get('/', function () {
-    return view('index');
+    return view('home');
 });
 
 Route::get('/test', FUNCTION () {
     return view('test');
 });
 
+//-------------
+
+
+// Login, logout, registration
 Route::get('login', [CustomAuthController::class, 'showFormLogin'])->name('login');
+Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name('submit-login');
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
+Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
+
 //-------------

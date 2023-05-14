@@ -43,9 +43,18 @@
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
+                        @guest
                         <div class="header__top__links">
-                            <a href="{{route('login')}}">Sign in</a>
+                            <a href="{{route('login')}}">Login</a>
                         </div>
+                        <div class="header__top__links">
+                            <a href="{{ route('registration') }}">Sign up</a>
+                        </div>
+                        @else
+                        <div class="header__top__links">
+                            <a href="{{ route('signout') }}">Log out</a>
+                        </div>
+                        @endguest
                         <div class="header__top__hover">
                             <span>Language<i class="arrow_carrot-down"></i></span>
                             <ul>
@@ -62,19 +71,21 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="{{route('index','index')}}"><img src="{{asset('storage/img/logo.png')}}" alt=""></a>
+                    <a href="{{route('home','home')}}"><img src="{{asset('storage/img/logo.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li class=""><a href="{{route('index','index')}}">Home</a></li>
+                        <li class=""><a href="{{route('home','home')}}">Home</a></li>
                         <li><a href="{{route('shop','shop')}}">Shop</a></li>
                         <li><a href="#">Categories</a>
                             <ul class="dropdown">
+                                @if (!$categories->isEmpty())
                                 @foreach($categories as $category)
                                 <li><a href="./about.html">{{$category->cate_name}}</a></li>
                                 @endforeach
+                                @endif
                             </ul>
                         </li>
                     </ul>
