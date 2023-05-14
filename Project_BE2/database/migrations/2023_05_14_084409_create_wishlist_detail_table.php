@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wishlist_detail', function (Blueprint $table) {
+        Schema::create('wishlist_details', function (Blueprint $table) {
             $table->id();
             $table->integer('id_wishlist');
             $table->integer('id_user');
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('wishlist_detail');
+        Schema::dropIfExists('wishlist_details');
     }
 };
