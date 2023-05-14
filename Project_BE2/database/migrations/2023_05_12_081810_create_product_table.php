@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('description', 500);
-            $table->string('color', 100);
+            $table->string('id_color', 100);
             $table->integer('price');
             $table->integer('instock');
             $table->integer('sold');
-            $table->string('type', 100);
+            $table->string('id_category', 100);
             $table->string('photo');
-            $table->integer('size');
+            $table->integer('id_size');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('products');
     }
 };

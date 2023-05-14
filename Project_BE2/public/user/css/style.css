@@ -1322,24 +1322,24 @@ ol {
 	cursor: pointer;
 }
 
-.shop__sidebar__color label.c-1 {
+.shop__sidebar__color label.c-black{
 	background: #0b090c;
 }
 
-.shop__sidebar__color label.c-2 {
-	background: #20315f;
+.shop__sidebar__color label.c-brown {
+	background: #5f4d20;
 }
 
-.shop__sidebar__color label.c-3 {
-	background: #f1af4d;
+.shop__sidebar__color label.c-white {
+	background: #dddcda;
 }
 
-.shop__sidebar__color label.c-4 {
-	background: #636068;
+.shop__sidebar__color label.c-pink {
+	background: #cd53dd;
 }
 
-.shop__sidebar__color label.c-5 {
-	background: #57594d;
+.shop__sidebar__color label.c-green {
+	background: #39e450;
 }
 
 .shop__sidebar__color label.c-6 {
