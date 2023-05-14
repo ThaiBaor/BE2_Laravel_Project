@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cart', function (Blueprint $table) {
             $table->id();
-            $table->integer('iduser');
+            $table->integer('id_user');
             $table->timestamps();
         });
     }

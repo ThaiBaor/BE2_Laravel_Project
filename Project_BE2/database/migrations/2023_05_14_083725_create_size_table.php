@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('size', function (Blueprint $table) {
             $table->id();
-            $table->string('sizecode', 100);
+            $table->string('size_code', 100);
             $table->timestamps();
         });
     }
