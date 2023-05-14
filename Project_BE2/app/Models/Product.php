@@ -20,13 +20,13 @@ class Product extends Authenticatable
     protected $fillable = [
         'name',
         'description',
-        'color',
+        'id_color',
         'price',
         'instock',
         'sold',
-        'type',
-        'size',
+        'id_category',
         'photo',
+        'id_size',
     ];
 
     /**

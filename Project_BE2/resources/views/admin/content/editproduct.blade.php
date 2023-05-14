@@ -23,7 +23,7 @@
                                 <input type="text" placeholder="Description" id="description" value="{{$getDataProductById[0]->description}}" class="form-control" name="description" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Color" value="{{$getDataProductById[0]->color}}" id="color" class="form-control" name="color" required autofocus>
+                                <input type="text" placeholder="ID Color" value="{{$getDataProductById[0]->id_color}}" id="id_color" class="form-control" name="id_color" required autofocus>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" placeholder="Price" value="{{$getDataProductById[0]->price}}" id="price" class="form-control" name="price" required autofocus>
@@ -35,10 +35,10 @@
                                 <input type="text" placeholder="Sold" value="{{$getDataProductById[0]->sold}}" id="sold" class="form-control" name="sold" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Type" value="{{$getDataProductById[0]->type}}" id="type" class="form-control" name="type" required autofocus>
+                                <input type="text" placeholder="ID Category" value="{{$getDataProductById[0]->id_category}}" id="id_category" class="form-control" name="id_category" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Size" value="{{$getDataProductById[0]->size}}" id="size" class="form-control" name="size" required autofocus>
+                                <input type="text" placeholder="ID Size" value="{{$getDataProductById[0]->id_size}}" id="id_size" class="form-control" name="id_size" required autofocus>
                             </div>
                             <div class="mb-3">
                                 <label for="photo" class="form-label">Photo</label>
