@@ -23,11 +23,11 @@ Route::post('customproduct', [ProductController::class, 'customProduct'])->name(
 Route::get('getdataedt/id{id}', [ProductController::class, 'getDataEdit'])->name('getdataedt');
 Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('editproduct');
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
+Route::get('searchproduct', [ProductController::class, 'searchProudct'])->name('searchproduct');
 //--------------
 
 
 // Voucher
-
 Route::get('addvoucher', [VoucherController::class, 'addVoucher'])->name('addvoucher');
 Route::post('customvoucher', [VoucherController::class, 'customVoucher'])->name('customvoucher.custom');
 Route::get('listvoucher', [VoucherController::class, 'listVoucher'])->name('listvoucher');
