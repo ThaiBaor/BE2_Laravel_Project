@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <h3 class="card-header text-center">Add Product</h3>
+                    <h3 class="card-header text-center">ADD PRODUCT</h3>
                     <div class="card-body">
                         <form action="{{ route('registerproduct.custom') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -42,12 +42,9 @@
                             <div class="form-group">
                                 <label for="photo">Attach a photograph</label>
                                 <input type="file" name="photo" id="photo" accept="image/*" class="form-control-file" required>
-                                @if ($errors->has('photo'))
-                                <span class="text-danger">{{ $errors->first('photo') }}</span>
-                                @endif
                             </div>
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Sign up</button>
+                                <button type="submit" class="btn btn-dark btn-block">ADD PRODUCT</button>
                             </div>
                         </form>
                     </div>

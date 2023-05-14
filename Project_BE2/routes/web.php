@@ -22,15 +22,35 @@ Route::post('customproduct', [ProductController::class, 'customProduct'])->name(
 Route::get('getdataedt/id{id}', [ProductController::class, 'getDataEdit'])->name('getdataedt');
 Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('editproduct');
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
-Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
+//--------------
+
+
+// Voucher
+Route::get('searchproduct', [ProductController::class, 'searchProduct'])->name('searchproduct');
+Route::get('addvoucher', [VoucherController::class, 'addVoucher'])->name('addvoucher');
+Route::post('customvoucher', [VoucherController::class, 'customVoucher'])->name('customvoucher.custom');
+Route::get('listvoucher', [VoucherController::class, 'listVoucher'])->name('listvoucher');
+Route::get('getdataedtvoucher/id{id}', [VoucherController::class, 'getDataEditVoucher'])->name('getdataedtvoucher');
+Route::post('editvoucher', [VoucherController::class, 'updateVoucher'])->name('editvoucher');
+Route::get('deletevoucher/id{id}', [VoucherController::class, 'deleteVoucher'])->name('deletevoucher');
+Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('searchvoucher');
 //---------
-
-
 
 // Category
 Route::get('/{shop}',[CategoryController::class, 'index'])->name('shop');
-Route::get('/{index}',[CategoryController::class, 'index'])->name('index');
+Route::get('/{home}',[CategoryController::class, 'index'])->name('home');
 //-----------
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -49,10 +69,21 @@ Route::get('/wishlist', FUNCTION () {
     return view('wishlist');
 });
 Route::get('/', function () {
-    return view('index');
+    return view('home');
 });
 
 Route::get('/test', FUNCTION () {
     return view('test');
 });
+
+//-------------
+
+
+// Login, logout, registration
+Route::get('login', [CustomAuthController::class, 'showFormLogin'])->name('login');
+Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name('submit-login');
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
+Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
+
 //-------------
