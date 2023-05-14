@@ -22,6 +22,10 @@
                             <div class="form-group mb-3">
                                 <input type="date" placeholder="Expired Date" id="expireddate" name="expireddate" required autofocus>
                             </div>
+                            <div class="form-group mb-3">
+                                <input type="text" placeholder="Gia tri giam" id="reduce" class="form-control" name="reduce" required autofocus>
+                               
+                            </div>
 
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">ADD VOUCHER</button>
