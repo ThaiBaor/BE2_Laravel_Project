@@ -27,7 +27,7 @@ Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])-
 
 
 // Voucher
-Route::get('searchproduct', [ProductController::class, 'searchProduct'])->name('searchproduct');
+
 Route::get('addvoucher', [VoucherController::class, 'addVoucher'])->name('addvoucher');
 Route::post('customvoucher', [VoucherController::class, 'customVoucher'])->name('customvoucher.custom');
 Route::get('listvoucher', [VoucherController::class, 'listVoucher'])->name('listvoucher');
