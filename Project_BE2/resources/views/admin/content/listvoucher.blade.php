@@ -27,6 +27,7 @@
               <th>Ma Voucher</th>
               <th>Created Date</th>
               <th>Expired Date</th>
+              <th>Reduce</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -37,6 +38,7 @@
               <td>{{$voucher->mavoucher}}</td>
               <td>{{$voucher->createddate}}</td>
               <td>{{$voucher->expireddate}}</td>
+              <td>{{$voucher->reduce}}</td>
               <td>
                 <a href="{{route('getdataedtvoucher',$voucher->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('deletevoucher',$voucher->id)}}" class="btn btn-primary">Delete</a>

@@ -21,6 +21,7 @@ class Voucher extends Authenticatable
         'mavoucher',
         'createddate',
         'expireddate',
+        'reduce',
     ];
 
     /**

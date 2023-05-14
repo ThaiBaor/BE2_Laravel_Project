@@ -27,6 +27,7 @@ class VoucherController extends Controller
             'mavoucher' => 'required',
             'createddate' => 'required',
             'expireddate' => 'required',
+            'reduce' => 'required',
         ]);
         $createdDate = $request->createddate;
         $newCreatedDate = date("Y-m-d", strtotime($createdDate));
@@ -45,6 +46,7 @@ class VoucherController extends Controller
             'mavoucher' => $data['mavoucher'],
             'createddate' => $data['createddate'],
             'expireddate' => $data['expireddate'],
+            'reduce' => $data['reduce'],
         ]);
     }
 
@@ -64,6 +66,7 @@ class VoucherController extends Controller
             'mavoucher' => $request->mavoucher,
             'createddate' => $newCreatedDate,
             'expireddate' => $newExpiredDate,
+            'reduce' => $request->reduce,
         ]);
         //Thực hiện chuyển trang
         return redirect('listvoucher');
