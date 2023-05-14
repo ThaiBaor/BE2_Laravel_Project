@@ -34,10 +34,7 @@
                                 <input type="text" placeholder="Type" id="type" class="form-control" name="type" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Star" id="star" class="form-control" name="star" required autofocus>
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="Number comment" id="number_comment" class="form-control" name="number_comment" required autofocus>
+                                <input type="text" placeholder="Size" id="size" class="form-control" name="size" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="photo">Attach a photograph</label>
