@@ -28,8 +28,7 @@ class ProductController extends Controller
             'instock' => 'required',
             'sold' => 'required',
             'type' => 'required',
-            'star' => 'required',
-            'number_comment' => 'required',
+            'size' => 'required',
             'photo' => 'required',
         ]);
         $file = $request->file('photo');
@@ -52,8 +51,7 @@ class ProductController extends Controller
             'instock' => $data['instock'],
             'sold' => $data['sold'],
             'type' => $data['type'],
-            'star' => $data['star'],
-            'number_comment' => $data['number_comment'],
+            'size' => $data['size'],
             'photo' => $data['photo'],
         ]);
     }
@@ -79,8 +77,7 @@ class ProductController extends Controller
             'instock' => $request->instock,
             'sold' => $request->sold,
             'type' => $request->type,
-            'star' => $request->star,
-            'number_comment' => $request->number_comment,
+            'size' => $request->size,
             'photo' => $fileName,
         ]);
         //Thực hiện chuyển trang

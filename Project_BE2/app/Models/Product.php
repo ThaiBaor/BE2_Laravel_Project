@@ -25,8 +25,7 @@ class Product extends Authenticatable
         'instock',
         'sold',
         'type',
-        'star',
-        'number_comment',
+        'size',
         'photo',
     ];
 

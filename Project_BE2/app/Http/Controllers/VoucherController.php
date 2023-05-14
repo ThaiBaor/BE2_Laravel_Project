@@ -41,7 +41,7 @@ class VoucherController extends Controller
 
     public function createVoucher(array $data)
     {
-        return Product::create([
+        return Voucher::create([
             'mavoucher' => $data['mavoucher'],
             'createddate' => $data['createddate'],
             'expireddate' => $data['expireddate'],

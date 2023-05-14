@@ -20,9 +20,8 @@ return new class extends Migration
             $table->integer('instock');
             $table->integer('sold');
             $table->string('type', 100);
-            $table->integer('star');
-            $table->integer('number_comment');
             $table->string('photo');
+            $table->integer('size');
             $table->timestamps();
         });
     }
