@@ -104,4 +104,10 @@ class ProductController extends Controller
         $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
         return view('admin.content.listsearchproduct', compact('products'));
     }
+    public function searchProductUser(Request $request)
+    {
+        $keyword = $request->keyword;
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
+        return view('shop', compact('products'));
+    }
 }
