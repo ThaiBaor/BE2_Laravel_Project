@@ -43,7 +43,7 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 // Layout fontend
 Route::get('/shop',[ShopController::class, 'getAllProducts'])->name('shop');
 Route::get('/home',[HomeController::class, 'goHome'])->name('home');
-Route::get('/shopbycategory',[HomeController::class, 'goShopByCategory'])->name('shopbycategory');
+Route::get('/shopbycategory',[ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
 
 Route::get('/detail', FUNCTION () {
     return view('detail');
