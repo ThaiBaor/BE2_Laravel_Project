@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,8 +40,8 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 //---------
 
 // Layout fontend
-Route::get('/shop',[CategoryController::class, 'goShop'])->name('shop');
-Route::get('/home',[CategoryController::class, 'goHome'])->name('home');
+Route::get('/shop',[HomeController::class, 'goShop'])->name('shop');
+Route::get('/home',[HomeController::class, 'goHome'])->name('home');
 //-----------
 
 
