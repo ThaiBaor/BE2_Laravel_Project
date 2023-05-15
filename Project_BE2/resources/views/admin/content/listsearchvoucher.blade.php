@@ -24,7 +24,7 @@
         <table CLASS="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Ma Voucher</th>
+              <th>Code voucher</th>
               <th>Created Date</th>
               <th>Expired Date</th>
               <th>Reduce</th>
@@ -35,7 +35,7 @@
           <tbody>
             @foreach($vouchers as $voucher)
             <tr>
-              <td>{{$voucher->mavoucher}}</td>
+              <td>{{$voucher->code_voucher}}</td>
               <td>{{$voucher->createddate}}</td>
               <td>{{$voucher->expireddate}}</td>
               <td>{{$voucher->reduce}}</td>

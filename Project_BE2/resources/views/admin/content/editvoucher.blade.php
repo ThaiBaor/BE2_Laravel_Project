@@ -11,7 +11,7 @@
                             @csrf
                             <div class="form-group mb-3">
                             <input type="hidden"  id="id" value="{{$getDataVoucherById[0]->id}}"  name="id" >
-                                <input type="text" placeholder="Ma Voucher" id="mavoucher" value="{{$getDataVoucherById[0]->mavoucher}}" class="form-control" name="mavoucher" required autofocus>
+                                <input type="text" placeholder="code_voucher" id="code_voucher" value="{{$getDataVoucherById[0]->code_voucher}}" class="form-control" name="code_voucher" required autofocus>
                                 @if ($errors->has('mavoucher'))
                                 <span class="text-danger">{{ $errors->first('mavoucher') }}</span>
                                 @endif

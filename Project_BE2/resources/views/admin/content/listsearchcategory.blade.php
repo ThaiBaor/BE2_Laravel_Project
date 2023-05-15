@@ -5,7 +5,7 @@
 <form action="{{ route('searchcategory') }}" method="GET">
   <div CLASS="input-group">
     @csrf
-    <input type="text" name= "keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+    <input type="text" name="keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
     <div CLASS="input-group-append">
       <button CLASS="btn btn-primary" type="submit">
         <i CLASS="fas fa-search fa-sm"></i>
@@ -16,15 +16,15 @@
   <!-- DataTales Example -->
   <div CLASS="card shadow mb-12">
     <div CLASS="card-header py-3">
-      <h6 CLASS="m-0 font-weight-bold text-primary">VOUCHER </h6>
-      <h6><a href="{{route('addvoucher')}}" class="btn btn-primary">ADD VOUCHER</a></h6>
+      <h6 CLASS="m-0 font-weight-bold text-primary">CATEGORY </h6>
+      <h6><a href="{{route('addcategory')}}" class="btn btn-primary">ADD CATEGORY</a></h6>
     </div>
     <div CLASS="card-body">
       <div CLASS="table-responsive">
         <table CLASS="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Ten Category</th>
+              <th>CATEGOY NAME</th>
             </tr>
           </thead>
 
@@ -40,7 +40,7 @@
             @endforeach
           </tbody>
         </table>
-        {{ $category->links('admin.custompagination') }}
+        {{ $categories->links('admin.custompagination') }}
       </div>
     </div>
   </div>

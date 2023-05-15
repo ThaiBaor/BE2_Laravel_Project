@@ -17,8 +17,7 @@ class CategoryController extends Controller
     public function addCategory()
     {
         return view('admin.content.addcategory');
-    }
-
+    }   
     public function customCategory(Request $request)
     {
         $request->validate([
