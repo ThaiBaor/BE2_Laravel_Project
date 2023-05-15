@@ -50,7 +50,6 @@ class CategoryController extends Controller
     { 
         $updateData = DB::table('categories')->where('id', $request->id)->update([
             'cate_name' => $request->cate_name,
-            'reduce' => $request->reduce,
         ]);
         return redirect('listcategory');
     }
@@ -63,10 +62,10 @@ class CategoryController extends Controller
     }
 
 
-    public function searchVoucher(Request $request)
+    public function searchCategory(Request $request)
     {
         $keyword = $request->keyword;
-        $vouchers = Voucher::where('mavoucher', 'LIKE', '%' . $keyword . '%')->paginate(4);
-        return view('admin.content.listsearchvoucher', compact('vouchers'));
+        $categories = Category::where('cate_name', 'LIKE', '%' . $keyword . '%')->paginate(4);
+        return view('admin.content.listsearchcategory', compact('categories'));
     }
 }

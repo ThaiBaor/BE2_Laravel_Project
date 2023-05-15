@@ -2,7 +2,7 @@
 
 
 @section('content')
-<form action="{{ route('searchproduct') }}" method="GET">
+<form action="{{ route('searchcategory') }}" method="GET">
   <div CLASS="input-group">
     @csrf
     <input type="text" name= "keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -24,7 +24,7 @@
         <table CLASS="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Name Category</th>
+              <th>CATEGORY NAME</th>
             </tr>
           </thead>
           <tbody>
