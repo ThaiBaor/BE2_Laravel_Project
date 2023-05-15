@@ -68,8 +68,15 @@ Route::get('/test', FUNCTION () {
 
 
 
-
-
+// Category
+Route::get('listcategory', [CategoryController:: class, 'listCategory']) -> name('listcategory');
+Route::get('addcategory', [CategoryController::class, 'addcategory'])->name('addcategory');
+Route::post('customcategory', [CategoryController::class, 'customCategory'])->name('customcategory.custom');
+Route::get('getdataedtcategory/id{id}', [CategoryController::class, 'getDataEditCategory'])->name('getdataedtcategory');
+Route::post('editcategory', [CategoryController::class, 'updateCategory'])->name('editcategory');
+Route::get('deletecategory/id{id}', [CategoryController::class, 'deleteCategory'])->name('deletecategory');
+Route::get('searchcategory', [CategoryController::class, 'searchCategory'])->name('searchcategory');
+//---------
 
 
 
