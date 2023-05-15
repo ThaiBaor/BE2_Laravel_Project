@@ -40,7 +40,7 @@
                                     <div class="card-body">
                                         <div class="shop__sidebar__categories">
                                             <ul class="nice-scroll">
-                                                @foreach($categories as $category)
+                                                @foreach($categories_global as $category)
                                                 <li><a href="#">{{$category->cate_name}}</a></li>
                                                 @endforeach                                           
                                             </ul>
