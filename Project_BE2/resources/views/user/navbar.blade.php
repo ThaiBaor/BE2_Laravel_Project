@@ -81,7 +81,7 @@
                         <li><a href="{{route('shop')}}">Shop</a></li>
                         <li><a href="#">Categories</a>
                             <ul class="dropdown">
-                                @foreach($categories as $category)
+                                @foreach($categories_global as $category)
                                 <li><a href="#">{{$category->cate_name}}</a></li>
                                 @endforeach
                             </ul>
