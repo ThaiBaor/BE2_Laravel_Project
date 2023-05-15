@@ -33,8 +33,8 @@
               <th>In stock</th>
               <th>Sold</th>
               <th>Type</th>
-              <th>Star</th>
-              <th>Number comment</th>
+              <th>Size</th>
+              
 
             </tr>
           </thead>
@@ -54,8 +54,7 @@
               <td>{{$product->instock}}</td>
               <td>{{$product->sold}}</td>
               <td>{{$product->type}}</td>
-              <td>{{$product->star}}</td>
-              <td>{{$product->number_comment}}</td>
+              <td>{{$product->size}}</td>
             </tr>
             @endforeach
           </tbody>

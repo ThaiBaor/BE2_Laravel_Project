@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vouchers', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('code_voucher', 100);
-            $table->date('createddate');
-            $table->date('expireddate');
-            $table->integer('reduce');
+            $table->integer('id_user');
+            $table->integer('phone_number');
+            $table->string('email', 100);
+            $table->date('invoice_date');
+            $table->string('discount_code', 100);
             $table->timestamps();
-            
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vouchers');
+        Schema::dropIfExists('invoices');
     }
 };

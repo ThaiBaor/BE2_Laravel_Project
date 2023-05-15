@@ -81,11 +81,9 @@
                         <li><a href="{{route('shop','shop')}}">Shop</a></li>
                         <li><a href="#">Categories</a>
                             <ul class="dropdown">
-                                @if (!$categories->isEmpty())
                                 @foreach($categories as $category)
-                                <li><a href="./about.html">{{$category->cate_name}}</a></li>
+                                <li><a href="#">{{$category->cate_name}}</a></li>
                                 @endforeach
-                                @endif
                             </ul>
                         </li>
                     </ul>

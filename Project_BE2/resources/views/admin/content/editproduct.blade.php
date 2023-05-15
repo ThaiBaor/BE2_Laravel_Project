@@ -38,10 +38,7 @@
                                 <input type="text" placeholder="Type" value="{{$getDataProductById[0]->type}}" id="type" class="form-control" name="type" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Star" value="{{$getDataProductById[0]->star}}" id="star" class="form-control" name="star" required autofocus>
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="Number comment" value="{{$getDataProductById[0]->number_comment}}" id="number_comment" class="form-control" name="number_comment" required autofocus>
+                                <input type="text" placeholder="Size" value="{{$getDataProductById[0]->size}}" id="size" class="form-control" name="size" required autofocus>
                             </div>
                             <div class="mb-3">
                                 <label for="photo" class="form-label">Photo</label>
