@@ -27,13 +27,13 @@
               <th>Name</th>
               <th>Image</th>
               <th>Description</th>
-              <th>Color</th>
+              <th>ID Color</th>
               <th>Action</th>
               <th>Price</th>
               <th>In stock</th>
               <th>Sold</th>
-              <th>Type</th>
-              <th>Size</th>
+              <th>ID Category</th>
+              <th>ID Size</th>
               
 
             </tr>
@@ -45,7 +45,7 @@
               <td>{{$product->name}}</td>
               <td><img src="{{URL::asset('uploads')}}/{{$product->photo}}" alt="" width="50px" height="50px"></td>
               <td>{{$product->description}}</td>
-              <td>{{$product->color}}</td>
+              <td>{{$product->id_color}}</td>
               <td>
                 <a href="{{route('getdataedt',$product->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('deleteproduct',$product->id)}}" class="btn btn-primary">Delete</a>
@@ -53,8 +53,8 @@
               <td>{{$product->price}}</td>
               <td>{{$product->instock}}</td>
               <td>{{$product->sold}}</td>
-              <td>{{$product->type}}</td>
-              <td>{{$product->size}}</td>
+              <td>{{$product->id_category}}</td>
+              <td>{{$product->id_size}}</td>
             </tr>
             @endforeach
           </tbody>
