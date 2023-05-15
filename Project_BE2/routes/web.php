@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController; 
-use App\Http\Controllers\VoucherController; 
+use App\Http\Controllers\VoucherController;
+use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,32 +39,10 @@ Route::get('deletevoucher/id{id}', [VoucherController::class, 'deleteVoucher'])-
 Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('searchvoucher');
 //---------
 
-// Category
-/*Route::get('/{shop}',[CategoryController::class, 'index'])->name('shop');
-Route::get('/{home}',[CategoryController::class, 'index'])->name('home');*/
-Route::get('listcategory', [CategoryController:: class, 'listCategory']) -> name('listcategory');
-Route::get('addcategory', [CategoryController::class, 'addcategory'])->name('addcategory');
-Route::post('customcategory', [CategoryController::class, 'customCategory'])->name('customcategory.custom');
-Route::get('getdataedtcategory/id{id}', [CategoryController::class, 'getDataEditCategory'])->name('getdataedtcategory');
-Route::post('editcategory', [CategoryController::class, 'updateCategory'])->name('editcategory');
-Route::get('deletecategory/id{id}', [CategoryController::class, 'deleteCategory'])->name('deletecategory');
-Route::get('searchcategory', [CategoryController::class, 'searchCategory'])->name('searchcategory');
-//-----------
+// Layout fontend
+Route::get('/shop',[HomeController::class, 'goShop'])->name('shop');
+Route::get('/home',[HomeController::class, 'goHome'])->name('home');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Layout
 Route::get('/detail', FUNCTION () {
     return view('detail');
 });
@@ -83,14 +63,27 @@ Route::get('/', function () {
 Route::get('/test', FUNCTION () {
     return view('test');
 });
+//-----------
 
-//-------------
+
+
+
+// Category
+Route::get('listcategory', [CategoryController:: class, 'listCategory']) -> name('listcategory');
+Route::get('addcategory', [CategoryController::class, 'addcategory'])->name('addcategory');
+Route::post('customcategory', [CategoryController::class, 'customCategory'])->name('customcategory.custom');
+Route::get('getdataedtcategory/id{id}', [CategoryController::class, 'getDataEditCategory'])->name('getdataedtcategory');
+Route::post('editcategory', [CategoryController::class, 'updateCategory'])->name('editcategory');
+Route::get('deletecategory/id{id}', [CategoryController::class, 'deleteCategory'])->name('deletecategory');
+Route::get('searchcategory', [CategoryController::class, 'searchCategory'])->name('searchcategory');
+//---------
+
 
 
 // Login, logout, registration
 Route::get('login', [CustomAuthController::class, 'showFormLogin'])->name('login');
 Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name('submit-login');
-Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::get('home/signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
 

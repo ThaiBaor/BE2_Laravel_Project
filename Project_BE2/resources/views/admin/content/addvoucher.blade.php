@@ -10,7 +10,7 @@
                         <form action="{{route('customvoucher.custom') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Ma Voucher" id="mavoucher" class="form-control" name="mavoucher" required autofocus>
+                                <input type="text" placeholder="code_voucher" id="code_voucher" class="form-control" name="code_voucher" required autofocus>
                                 @if ($errors->has('mavoucher'))
                                 <span class="text-danger">{{ $errors->first('mavoucher') }}</span>
                                 @endif

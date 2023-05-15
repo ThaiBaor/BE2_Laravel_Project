@@ -18,7 +18,7 @@ class Voucher extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'mavoucher',
+        'code_voucher',
         'createddate',
         'expireddate',
         'reduce',
