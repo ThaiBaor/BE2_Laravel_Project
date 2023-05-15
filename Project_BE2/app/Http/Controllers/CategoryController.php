@@ -17,12 +17,7 @@ class CategoryController extends Controller
     public function addCategory()
     {
         return view('admin.content.addcategory');
-    }
-    public function index($view)
-    {
-        $categories = DB::table('categories')->get();
-        return view($view,compact('categories'));
-    }
+    }   
     public function customCategory(Request $request)
     {
         $request->validate([
