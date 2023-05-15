@@ -2,7 +2,7 @@
 
 
 @section('content')
-<form action="{{ route('searchvoucher') }}" method="GET">
+<form action="{{ route('searchcategory') }}" method="GET">
   <div CLASS="input-group">
     @csrf
     <input type="text" name= "keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -24,30 +24,23 @@
         <table CLASS="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Code voucher</th>
-              <th>Created Date</th>
-              <th>Expired Date</th>
-              <th>Reduce</th>
-              <th>Action</th>
+              <th>Ten Category</th>
             </tr>
           </thead>
 
           <tbody>
-            @foreach($vouchers as $voucher)
+            @foreach($categories as $category)
             <tr>
-              <td>{{$voucher->code_voucher}}</td>
-              <td>{{$voucher->createddate}}</td>
-              <td>{{$voucher->expireddate}}</td>
-              <td>{{$voucher->reduce}}</td>
+              <td>{{$category->cate_name}}</td>
               <td>
-                <a href="{{route('getdataedtvoucher',$voucher->id)}}" class="btn btn-primary">Edit</a>
-                <a href="{{route('deletevoucher',$voucher->id)}}" class="btn btn-primary">Delete</a>
+                <a href="{{route('getdataedtcategory',$category->id)}}" class="btn btn-primary">Edit</a>
+                <a href="{{route('deletecategory',$category->id)}}" class="btn btn-primary">Delete</a>
               </td>
             </tr>
             @endforeach
           </tbody>
         </table>
-        {{ $vouchers->links('admin.custompagination') }}
+        {{ $category->links('admin.custompagination') }}
       </div>
     </div>
   </div>

@@ -23,13 +23,13 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'color' => 'required',
+            'id_color' => 'required',
             'price' => 'required',
             'instock' => 'required',
             'sold' => 'required',
-            'type' => 'required',
-            'size' => 'required',
+            'id_category' => 'required',
             'photo' => 'required',
+            'id_size' => 'required',
         ]);
         $file = $request->file('photo');
         $path = 'uploads';
@@ -46,13 +46,13 @@ class ProductController extends Controller
         return Product::create([
             'name' => $data['name'],
             'description' => $data['description'],
-            'color' => $data['color'],
+            'id_color' => $data['id_color'],
             'price' => $data['price'],
             'instock' => $data['instock'],
             'sold' => $data['sold'],
-            'type' => $data['type'],
-            'size' => $data['size'],
+            'id_category' => $data['id_category'],
             'photo' => $data['photo'],
+            'id_size' => $data['id_size'],
         ]);
     }
 
@@ -72,13 +72,13 @@ class ProductController extends Controller
         $updateData = DB::table('products')->where('id', $request->id)->update([
             'name' => $request->name,
             'description' => $request->description,
-            'color' => $request->color,
+            'id_color' => $request->id_color,
             'price' => $request->price,
             'instock' => $request->instock,
             'sold' => $request->sold,
-            'type' => $request->type,
-            'size' => $request->size,
+            'id_category' => $request->id_category,
             'photo' => $fileName,
+            'id_size' => $request->id_size,
         ]);
         //Thực hiện chuyển trang
         return redirect('listproduct');
