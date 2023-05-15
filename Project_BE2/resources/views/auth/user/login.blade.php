@@ -48,7 +48,7 @@
                                 </div>
                             </form>
                             <button type="submit" class="btn btn-dark btn-block mb-4">
-                                <a href="{{route('registration','home')}}" class="text-white">Sign up</a>
+                                <a href="{{route('registration')}}" class="text-white">Sign up</a>
                             </button>
                         </div>
                     </div>

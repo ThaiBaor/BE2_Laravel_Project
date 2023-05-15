@@ -10,12 +10,14 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($view)
+    public function goHome()
     {
-        $categories = DB::table('categories')->get();
-        return view($view,compact('categories'));
+        return view('home');
     }
-
+    public function goShop()
+    {
+        return view('shop');
+    }
     /**
      * Show the form for creating a new resource.
      */

@@ -71,14 +71,14 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="{{route('home','home')}}"><img src="{{asset('storage/img/logo.png')}}" alt=""></a>
+                    <a href="{{route('home')}}"><img src="{{asset('storage/img/logo.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li class=""><a href="{{route('home','home')}}">Home</a></li>
-                        <li><a href="{{route('shop','shop')}}">Shop</a></li>
+                        <li class=""><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('shop')}}">Shop</a></li>
                         <li><a href="#">Categories</a>
                             <ul class="dropdown">
                                 @foreach($categories as $category)

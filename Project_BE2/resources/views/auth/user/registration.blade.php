@@ -66,7 +66,7 @@
                                 </div>
                             </form>
                             <button type="submit" class="btn btn-dark btn-block mb-4">
-                                <a href="{{route('login','home')}}" class="text-white">Already have an account</a>                               
+                                <a href="{{route('login')}}" class="text-white">Already have an account</a>                               
                             </button>
                         </div>
                     </div>

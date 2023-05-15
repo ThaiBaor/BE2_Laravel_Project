@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController; 
-use App\Http\Controllers\VoucherController; 
+use App\Http\Controllers\VoucherController;
+use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,9 +38,9 @@ Route::get('deletevoucher/id{id}', [VoucherController::class, 'deleteVoucher'])-
 Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('searchvoucher');
 //---------
 
-// Category
-Route::get('/{shop}',[CategoryController::class, 'index'])->name('shop');
-Route::get('/{home}',[CategoryController::class, 'index'])->name('home');
+// Layout fontend
+Route::get('/shop',[CategoryController::class, 'goShop'])->name('shop');
+Route::get('/home',[CategoryController::class, 'goHome'])->name('home');
 //-----------
 
 
