@@ -78,6 +78,16 @@ Route::get('deletecategory/id{id}', [CategoryController::class, 'deleteCategory'
 Route::get('searchcategory', [CategoryController::class, 'searchCategory'])->name('searchcategory');
 //---------
 
+// Invoice
+Route::get('addinvoice', 'App\Http\Controllers\InvoiceController@addInvoice')->name('addinvoice');
+Route::post('custominvoice', 'App\Http\Controllers\InvoiceController@customInvoice')->name('custominvoice.custom');
+Route::get('listinvoice', 'App\Http\Controllers\InvoiceController@listInvoice')->name('listinvoice');
+Route::get('getdataedtinvoice/id{id}', 'App\Http\Controllers\InvoiceController@getDataEditInvoice')->name('getdataedtinvoice');
+Route::post('editinvoice', 'App\Http\Controllers\InvoiceController@updateInvoice')->name('editinvoice');
+Route::get('deleteinvoice/id{id}', 'App\Http\Controllers\InvoiceController@deleteInvoice')->name('deleteinvoice');
+Route::get('searchinvoice', 'App\Http\Controllers\InvoiceController@searchInvoice')->name('searchinvoice');
+//---------
+
 
 
 // Login, logout, registration
