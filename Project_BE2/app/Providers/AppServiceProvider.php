@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function($view)
         {
             $categories = DB::table('categories')->select('cate_name')->get();
-            $view->with('categories', $categories);
+            $view->with('categories_global', $categories);
         });
     }
 }
