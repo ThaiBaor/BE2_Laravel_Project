@@ -21,14 +21,34 @@
   <li CLASS="nav-item">
     <a CLASS="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
       <i CLASS="fas fa-fw fa-cog"></i>
-      <span>Components</span>
+      <span>Menu</span>
     </a>
     <div id="collapseTwo" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div CLASS="bg-white py-2 collapse-inner rounded">
-        <h6 CLASS="collapse-header">Custom Components:</h6>
-        <a CLASS="collapse-item" href="#">User</a>
-        <a CLASS="collapse-item" href="#">Product</a>
-        <a CLASS="collapse-item" href="#">Order</a>
+        <h6 CLASS="collapse-header">User</h6>
+        <a CLASS="collapse-item" href="#">List User</a>
+        <a CLASS="collapse-item" href="#">Statistic</a>
+      </div>
+    </div>
+    <div id="collapseTwo" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div CLASS="bg-white py-2 collapse-inner rounded">
+        <h6 CLASS="collapse-header">Product</h6>
+        <a CLASS="collapse-item" href="{{route('listproduct')}}">List Product</a>
+        <a CLASS="collapse-item" href="#">Statistic</a>
+      </div>
+    </div>
+    <div id="collapseTwo" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div CLASS="bg-white py-2 collapse-inner rounded">
+        <h6 CLASS="collapse-header">Voucher</h6>
+        <a CLASS="collapse-item" href="{{route('listvoucher')}}">List Voucher</a>
+        <a CLASS="collapse-item" href="#">Statistic</a>
+      </div>
+    </div>
+    <div id="collapseTwo" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div CLASS="bg-white py-2 collapse-inner rounded">
+        <h6 CLASS="collapse-header">Category</h6>
+        <a CLASS="collapse-item" href="{{route('listcategory')}}">List Category</a>
+        <a CLASS="collapse-item" href="#">Statistic</a>
       </div>
     </div>
   </li>

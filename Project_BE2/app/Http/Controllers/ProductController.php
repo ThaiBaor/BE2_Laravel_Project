@@ -15,7 +15,7 @@ class ProductController extends Controller
 {
     public function registrationProduct()
     {
-        return view('admin.addproduct');
+        return view('admin.content.addproduct');
     }
 
     public function customProduct(Request $request)
@@ -23,19 +23,18 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'color' => 'required',
+            'id_color' => 'required',
             'price' => 'required',
             'instock' => 'required',
             'sold' => 'required',
-            'type' => 'required',
-            'star' => 'required',
-            'number_comment' => 'required',
+            'id_category' => 'required',
             'photo' => 'required',
+            'id_size' => 'required',
         ]);
         $file = $request->file('photo');
         $path = 'uploads';
         $fileName = $file->getClientOriginalName();
-        $file->move($path,$fileName);
+        $file->move($path, $fileName);
         $product = new Product($request->all());
         $product->photo = $fileName;
         $product->save();
@@ -47,89 +46,47 @@ class ProductController extends Controller
         return Product::create([
             'name' => $data['name'],
             'description' => $data['description'],
-            'color' => $data['color'],
+            'id_color' => $data['id_color'],
             'price' => $data['price'],
             'instock' => $data['instock'],
             'sold' => $data['sold'],
-            'type' => $data['type'],
-            'star' => $data['star'],
-            'number_comment' => $data['number_comment'],
+            'id_category' => $data['id_category'],
             'photo' => $data['photo'],
+            'id_size' => $data['id_size'],
         ]);
     }
 
     public function getDataEdit($id)
     {
         $getData = DB::table('products')->select('*')->where('id', $id)->get();
-        return view('admin.editproduct')->with('getDataProductById', $getData);
+        return view('admin.content.editproduct')->with('getDataProductById', $getData);
     }
 
-    public function updateProduct(Request $request){
+    public function updateProduct(Request $request)
+    {
         $file = $request->file('photo');
         $path = 'uploads';
         $fileName = $file->getClientOriginalName();
-        $file->move($path,$fileName);
+        $file->move($path, $fileName);
+        
         $updateData = DB::table('products')->where('id', $request->id)->update([
             'name' => $request->name,
-            'description' => $request->name,
-            'color' => $request->name,
-            'price' => $request->name,
-            'instock' => $request->name,
-            'sold' => $request->name,
-            'type' => $request->name,
-            'star' => $request->name,
-            'number_comment' =>$request->name,
-            'photo' =>$fileName,
+            'description' => $request->description,
+            'id_color' => $request->id_color,
+            'price' => $request->price,
+            'instock' => $request->instock,
+            'sold' => $request->sold,
+            'id_category' => $request->id_category,
+            'photo' => $fileName,
+            'id_size' => $request->id_size,
         ]);
         //Thực hiện chuyển trang
         return redirect('listproduct');
     }
-    public function update(Request $request, $id)
+    
+
+    public function deleteProduct($id)
     {
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'color' => 'required',
-            'price' => 'required',
-            'instock' => 'required',
-            'sold' => 'required',
-            'type' => 'required',
-            'star' => 'required',
-            'number_comment' => 'required',
-        ]);
-        
-        $data = $request->all();
-        $product = Product::find($id);
-       
-        // $file = $request->file('photo');
-        // if($request->hasFile('photo')){
-
-        //     $path = 'image-product';
-        //     $destination = $path .$product->photo;     
-        //     $old = "image-product/".$product->photo;
-        //     if(File::exists($destination)){
-        //         File::delete($destination);   
-        //         Storage::delete("$product->photo");
-        //     }
-        //     $fileName = $file->getClientOriginalName();
-        //     $file->move($path,$fileName);
-        //     $product->photo = $fileName;
-            
-        // }
-        $product->name = $data['name'];
-        $product->price = $data['price'];
-        $product->description = $data['description'];
-        
-        $product->quantity = $data['quantity'];
-       
-        $product->save(); 
-        $product->categories()->sync($request->input('categories'));
-
-        return redirect()->route('products.index',['product'=>$product])
-                         ->with('success', 'Edit successfully');
-    }
-
-    public function deleteProduct($id){
         $deleteData = DB::table('products')->where('id', '=', $id)->delete();
         return redirect('listproduct');
     }
@@ -138,7 +95,13 @@ class ProductController extends Controller
     public function listProduct()
     {
         $products = DB::table('products')->paginate(4);
-        return view('admin.listproduct', compact('products'));
+        return view('admin.content.listproduct', compact('products'));
     }
 
+    public function searchProduct(Request $request)
+    {
+        $keyword = $request->keyword;
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
+        return view('admin.content.listsearchproduct', compact('products'));
+    }
 }

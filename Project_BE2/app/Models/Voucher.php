@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Product extends Authenticatable
+class Voucher extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,15 +18,10 @@ class Product extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'description',
-        'id_color',
-        'price',
-        'instock',
-        'sold',
-        'id_category',
-        'photo',
-        'id_size',
+        'mavoucher',
+        'createddate',
+        'expireddate',
+        'reduce',
     ];
 
     /**

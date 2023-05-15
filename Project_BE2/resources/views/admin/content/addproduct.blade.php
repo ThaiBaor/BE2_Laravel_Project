@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <h3 class="card-header text-center">Add Product</h3>
+                    <h3 class="card-header text-center">ADD PRODUCT</h3>
                     <div class="card-body">
                         <form action="{{ route('registerproduct.custom') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -19,7 +19,7 @@
                                 <input type="text" placeholder="Description" id="description" class="form-control" name="description" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Color" id="color" class="form-control" name="color" required autofocus>
+                                <input type="text" placeholder="ID Color" id="id_color" class="form-control" name="id_color" required autofocus>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" placeholder="Price" id="price" class="form-control" name="price" required autofocus>
@@ -31,23 +31,17 @@
                                 <input type="text" placeholder="Sold" id="sold" class="form-control" name="sold" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Type" id="type" class="form-control" name="type" required autofocus>
+                                <input type="text" placeholder="ID_category" id="id_category" class="form-control" name="id_category" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Star" id="star" class="form-control" name="star" required autofocus>
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="Number comment" id="number_comment" class="form-control" name="number_comment" required autofocus>
+                                <input type="text" placeholder="ID Size" id="id_size" class="form-control" name="id_size" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="photo">Attach a photograph</label>
                                 <input type="file" name="photo" id="photo" accept="image/*" class="form-control-file" required>
-                                @if ($errors->has('photo'))
-                                <span class="text-danger">{{ $errors->first('photo') }}</span>
-                                @endif
                             </div>
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Sign up</button>
+                                <button type="submit" class="btn btn-dark btn-block">ADD PRODUCT</button>
                             </div>
                         </form>
                     </div>
