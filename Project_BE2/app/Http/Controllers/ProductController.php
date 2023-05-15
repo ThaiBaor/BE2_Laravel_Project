@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Hash;
 use Session;
@@ -15,7 +16,9 @@ class ProductController extends Controller
 {
     public function registrationProduct()
     {
-        return view('admin.content.addproduct');
+        $categories = DB::table('categories')->select('*')->get();
+        $size = DB::table('sizes')->select('*')->get();
+        return view('admin.content.addproduct',['categories' => $categories, 'size' => $size]);
     }
 
     public function customProduct(Request $request)
@@ -59,7 +62,9 @@ class ProductController extends Controller
     public function getDataEdit($id)
     {
         $getData = DB::table('products')->select('*')->where('id', $id)->get();
-        return view('admin.content.editproduct')->with('getDataProductById', $getData);
+        $categories = DB::table('categories')->select('*')->get();
+        $size = DB::table('sizes')->select('*')->get();
+        return view('admin.content.editproduct', ['getDataProductById'=>$getData,'categories' => $categories, 'size' => $size]);
     }
 
     public function updateProduct(Request $request)
