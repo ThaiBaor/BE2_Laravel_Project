@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\AdminController;
 use Hash;
 use Session;
 use App\Models\User;
@@ -16,9 +17,10 @@ class ProductController extends Controller
 {
     public function registrationProduct()
     {
+        AdminController::checkPermission();
         $categories = DB::table('categories')->select('*')->get();
         $size = DB::table('sizes')->select('*')->get();
-        return view('admin.content.addproduct',['categories' => $categories, 'size' => $size]);
+        return view('admin.content.addproduct', ['categories' => $categories, 'size' => $size]);
     }
 
     public function customProduct(Request $request)
@@ -64,7 +66,7 @@ class ProductController extends Controller
         $getData = DB::table('products')->select('*')->where('id', $id)->get();
         $categories = DB::table('categories')->select('*')->get();
         $size = DB::table('sizes')->select('*')->get();
-        return view('admin.content.editproduct', ['getDataProductById'=>$getData,'categories' => $categories, 'size' => $size]);
+        return view('admin.content.editproduct', ['getDataProductById' => $getData, 'categories' => $categories, 'size' => $size]);
     }
 
     public function updateProduct(Request $request)
@@ -73,7 +75,7 @@ class ProductController extends Controller
         $path = 'uploads';
         $fileName = $file->getClientOriginalName();
         $file->move($path, $fileName);
-        
+
         $updateData = DB::table('products')->where('id', $request->id)->update([
             'name' => $request->name,
             'description' => $request->description,
@@ -88,7 +90,7 @@ class ProductController extends Controller
         //Thực hiện chuyển trang
         return redirect('listproduct');
     }
-    
+
 
     public function deleteProduct($id)
     {

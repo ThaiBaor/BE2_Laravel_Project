@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController; 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\GoogleController;
@@ -42,27 +43,27 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 //---------
 
 // Layout fontend
-Route::get('/shop',[HomeController::class, 'goShop'])->name('shop');
-Route::get('/home',[HomeController::class, 'goHome'])->name('home');
+Route::get('/shop', [HomeController::class, 'goShop'])->name('shop');
+Route::get('/home', [HomeController::class, 'goHome'])->name('home');
 
-Route::get('/detail', FUNCTION () {
+Route::get('/detail', function () {
     return view('detail');
 });
 
-Route::get('/cart', FUNCTION () {
+Route::get('/cart', function () {
     return view('cart');
 });
-Route::get('/checkout', FUNCTION () {
+Route::get('/checkout', function () {
     return view('checkout');
 });
-Route::get('/wishlist', FUNCTION () {
+Route::get('/wishlist', function () {
     return view('wishlist');
 });
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/test', FUNCTION () {
+Route::get('/test', function () {
     return view('test');
 });
 //-----------
@@ -71,7 +72,7 @@ Route::get('/test', FUNCTION () {
 
 
 // Category
-Route::get('listcategory', [CategoryController:: class, 'listCategory']) -> name('listcategory');
+Route::get('listcategory', [CategoryController::class, 'listCategory'])->name('listcategory');
 Route::get('addcategory', [CategoryController::class, 'addCategory'])->name('addcategory');
 Route::post('customcategory', [CategoryController::class, 'customCategory'])->name('customcategory.custom');
 Route::get('getdataedtcategory/id{id}', [CategoryController::class, 'getDataEditCategory'])->name('getdataedtcategory');
@@ -95,14 +96,10 @@ Route::get('searchinvoice', 'App\Http\Controllers\InvoiceController@searchInvoic
 // Login, logout, registration
 Route::get('login', [CustomAuthController::class, 'showFormLogin'])->name('login');
 Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name('submit-login');
-Route::get('home/signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
-
-//-------------
-
-
-
-
 Route::get('/google',[GoogleController::class,'redirect'])->name('google');
 Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
+Route::get('/dashboard', [AdminController::class, 'showDashboard']);
+//-----------
