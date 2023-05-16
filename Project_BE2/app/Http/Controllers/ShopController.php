@@ -7,7 +7,7 @@ class ShopController extends Controller
 {
     public function getAllProducts()
     {
-        $products = DB::table('products')->get();
+        $products = DB::table('products')->paginate(6);
         return view('shop', compact('products'));
     }
 }
