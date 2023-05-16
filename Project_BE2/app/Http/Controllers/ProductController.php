@@ -90,8 +90,6 @@ class ProductController extends Controller
         //Thực hiện chuyển trang
         return redirect('listproduct');
     }
-
-
     public function deleteProduct($id)
     {
         $deleteData = DB::table('products')->where('id', '=', $id)->delete();

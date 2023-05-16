@@ -7,6 +7,7 @@ use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -50,9 +51,6 @@ Route::get('/detail', function () {
     return view('detail');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
 Route::get('/checkout', function () {
     return view('checkout');
 });
@@ -103,3 +101,10 @@ Route::get('/google',[GoogleController::class,'redirect'])->name('google');
 Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
+
+// Cart
+Route::get('cart', [CartController::class, 'getAllProductsInCart'])->name('show-cart');
+Route::get('add-to-cart/{id}',[CartController::class, 'addProductToCart'])->name('add-to-cart');
+Route::get('remove-from-cart/{id}',[CartController::class, 'removeProductFromCart'])->name('remove-from-cart');
+Route::get('clear-cart',[CartController::class, 'clearCart'])->name('clear-cart');
+//--------
