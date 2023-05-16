@@ -74,30 +74,11 @@
                                 <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shop__sidebar__size">
-                                            <label for="xs">xs
-                                                <input type="radio" id="xs">
+                                            @foreach($sizes_global as $size)
+                                            <label for="xs">{{$size->size_code}}
+                                                <input type="radio" id="{{$size->size_code}}">
                                             </label>
-                                            <label for="sm">s
-                                                <input type="radio" id="sm">
-                                            </label>
-                                            <label for="md">m
-                                                <input type="radio" id="md">
-                                            </label>
-                                            <label for="xl">xl
-                                                <input type="radio" id="xl">
-                                            </label>
-                                            <label for="2xl">2xl
-                                                <input type="radio" id="2xl">
-                                            </label>
-                                            <label for="xxl">xxl
-                                                <input type="radio" id="xxl">
-                                            </label>
-                                            <label for="3xl">3xl
-                                                <input type="radio" id="3xl">
-                                            </label>
-                                            <label for="4xl">4xl
-                                                <input type="radio" id="4xl">
-                                            </label>
+                                            @endforeach                            
                                         </div>
                                     </div>
                                 </div>
@@ -109,21 +90,11 @@
                                 <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shop__sidebar__color">
-                                            <label class="c-black" for="sp-1">
+                                            @foreach ($colors_global as $color)
+                                            <label class="{{$color->color_name}}" for="sp-1">
                                                 <input type="radio" id="sp-1">
                                             </label>
-                                            <label class="c-pink" for="sp-2">
-                                                <input type="radio" id="sp-2">
-                                            </label>
-                                            <label class="c-brown" for="sp-3">
-                                                <input type="radio" id="sp-3">
-                                            </label>
-                                            <label class="c-green" for="sp-4">
-                                                <input type="radio" id="sp-4">
-                                            </label>
-                                            <label class="c-white" for="sp-5">
-                                                <input type="radio" id="sp-5">
-                                            </label>
+                                            @endforeach
                                             
                                         </div>
                                     </div>
