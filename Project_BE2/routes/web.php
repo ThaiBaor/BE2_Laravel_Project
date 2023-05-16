@@ -4,8 +4,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +100,9 @@ Route::get('registration', [CustomAuthController::class, 'showFormRegistration']
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
 
 //-------------
+
+
+
+
+Route::get('/google',[GoogleController::class,'redirect'])->name('google');
+Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
