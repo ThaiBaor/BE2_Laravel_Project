@@ -29,6 +29,7 @@ Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('e
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
 Route::get('searchproduct', [ProductController::class, 'searchProduct'])->name('searchproduct');
 Route::get('searchproductuser', [ProductController::class, 'searchProductUser'])->name('searchproductuser');
+Route::get('searchproductbycategory', [ProductController::class, 'searchProductByCategory'])->name('searchproductcategory');
 //--------------
 
 
@@ -45,7 +46,7 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 // Layout fontend
 Route::get('/shop',[ShopController::class, 'getAllProducts'])->name('shop');
 Route::get('/home',[HomeController::class, 'goHome'])->name('home');
-Route::get('/shopbycategory',[ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
+Route::get('/shopbycategory',[ShopByCategoryController::class, 'getAllProducts'])->name('shopbycategory');
 
 Route::get('/detail', FUNCTION () {
     return view('detail');
