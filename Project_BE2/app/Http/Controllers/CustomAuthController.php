@@ -70,10 +70,5 @@ class CustomAuthController extends Controller
     public function signOut() {
         Auth::logout();
         return redirect('login');
-    }
-
-    public function listUser(){
-        $users = DB::table('users')->paginate(5);
-        return view('listUser', compact('users'));
-    }
+    }   
 }
