@@ -24,7 +24,7 @@ class VoucherController extends Controller
     public function customVoucher(Request $request)
     {
         $request->validate([
-            'mavoucher' => 'required',
+            'code_voucher' => 'required',
             'createddate' => 'required',
             'expireddate' => 'required',
             'reduce' => 'required',
@@ -43,7 +43,7 @@ class VoucherController extends Controller
     public function createVoucher(array $data)
     {
         return Voucher::create([
-            'mavoucher' => $data['mavoucher'],
+            'code_voucher' => $data['code_voucher'],
             'createddate' => $data['createddate'],
             'expireddate' => $data['expireddate'],
             'reduce' => $data['reduce'],
@@ -63,7 +63,7 @@ class VoucherController extends Controller
         $expiredDate = $request->expireddate;
         $newExpiredDate = date("Y-m-d", strtotime($expiredDate));
         $updateData = DB::table('vouchers')->where('id', $request->id)->update([
-            'mavoucher' => $request->mavoucher,
+            'code_voucher' => $request->code_voucher,
             'createddate' => $newCreatedDate,
             'expireddate' => $newExpiredDate,
             'reduce' => $request->reduce,
@@ -89,7 +89,7 @@ class VoucherController extends Controller
     public function searchVoucher(Request $request)
     {
         $keyword = $request->keyword;
-        $vouchers = Voucher::where('mavoucher', 'LIKE', '%' . $keyword . '%')->paginate(4);
+        $vouchers = Voucher::where('code_voucher', 'LIKE', '%' . $keyword . '%')->paginate(4);
         return view('admin.content.listsearchvoucher', compact('vouchers'));
     }
 }

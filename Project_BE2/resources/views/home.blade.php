@@ -25,6 +25,14 @@
                     </div>
                 </div>
             </div>
+            <div class="hero__items set-bg" data-setbg="{{asset('storage/img')}}/hero/hero-4.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">                       
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="hero__items set-bg" data-setbg="{{asset('storage/img')}}/hero/hero-2.jpg">
                 <div class="container">
                     <div class="row">
@@ -46,6 +54,15 @@
                     </div>
                 </div>
             </div>
+            <div class="hero__items set-bg" data-setbg="{{asset('storage/img')}}/hero/hero-3.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
     <!-- Hero Section End -->

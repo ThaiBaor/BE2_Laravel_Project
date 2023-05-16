@@ -44,6 +44,20 @@
         <a CLASS="collapse-item" href="#">Statistic</a>
       </div>
     </div>
+    <div id="collapseTwo" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div CLASS="bg-white py-2 collapse-inner rounded">
+        <h6 CLASS="collapse-header">Category</h6>
+        <a CLASS="collapse-item" href="{{route('listcategory')}}">List Category</a>
+        <a CLASS="collapse-item" href="#">Statistic</a>
+      </div>
+    </div>
+    <div id="collapseTwo" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div CLASS="bg-white py-2 collapse-inner rounded">
+        <h6 CLASS="collapse-header">Invoice</h6>
+        <a CLASS="collapse-item" href="{{route('listinvoice')}}">List Invoice</a>
+        <a CLASS="collapse-item" href="#">Statistic</a>
+      </div>
+    </div>
   </li>
  
 </ul>

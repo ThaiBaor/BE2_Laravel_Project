@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Voucher extends Authenticatable
+class Invoice extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,10 +18,11 @@ class Voucher extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'code_voucher',
-        'createddate',
-        'expireddate',
-        'reduce',
+        'id_user',
+        'phone_number',
+        'email',
+        'invoice_date',
+        'discount_code',
     ];
 
     /**

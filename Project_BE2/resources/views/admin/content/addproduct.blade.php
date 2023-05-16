@@ -19,7 +19,7 @@
                                 <input type="text" placeholder="Description" id="description" class="form-control" name="description" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Color" id="color" class="form-control" name="color" required autofocus>
+                                <input type="text" placeholder="ID Color" id="id_color" class="form-control" name="id_color" required autofocus>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="text" placeholder="Price" id="price" class="form-control" name="price" required autofocus>
@@ -31,10 +31,22 @@
                                 <input type="text" placeholder="Sold" id="sold" class="form-control" name="sold" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Type" id="type" class="form-control" name="type" required autofocus>
+                                <select placeholder="ID Category" name="id_category" id="id_category" class="form-control custom-select">
+                                    <option selected disabled>Select one</option>
+                                    
+                                    @foreach ($categories as $value)
+                                        <option value="{{$value->id}}">{{$value->cate_name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Size" id="size" class="form-control" name="size" required autofocus>
+                                <select placeholder="ID Size" name="id_size" id="id_size" class="form-control custom-select">
+                                    <option selected disabled>Select one</option>
+                                    
+                                    @foreach ($size as $value)
+                                        <option value="{{$value->id}}">{{$value->size_code}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="photo">Attach a photograph</label>
