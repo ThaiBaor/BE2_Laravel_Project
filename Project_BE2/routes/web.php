@@ -7,6 +7,8 @@ use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopByCategoryController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -29,6 +31,7 @@ Route::get('getdataedt/id{id}', [ProductController::class, 'getDataEdit'])->name
 Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('editproduct');
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
 Route::get('searchproduct', [ProductController::class, 'searchProduct'])->name('searchproduct');
+Route::get('searchproductuser', [ProductController::class, 'searchProductUser'])->name('searchproductuser');
 //--------------
 
 
@@ -43,8 +46,14 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 //---------
 
 // Layout fontend
+<<<<<<< HEAD
 Route::get('/shop', [HomeController::class, 'goShop'])->name('shop');
 Route::get('/home', [HomeController::class, 'goHome'])->name('home');
+=======
+Route::get('/shop',[ShopController::class, 'getAllProducts'])->name('shop');
+Route::get('/home',[HomeController::class, 'goHome'])->name('home');
+Route::get('/shopbycategory',[ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
+>>>>>>> user/TimKiemSanPham
 
 Route::get('/detail', function () {
     return view('detail');
