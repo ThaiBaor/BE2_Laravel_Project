@@ -156,7 +156,6 @@
                 <div class="row">
                 @foreach($products as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6">
-
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
                             <ul class="product__hover">
@@ -165,7 +164,7 @@
                         </div>
                         <div class="product__item__text">
                             <h6>{{$product->name}}</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <a href="{{ route('add-to-cart', $product->id) }}" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
@@ -176,7 +175,7 @@
                             <h5>${{$product->price}}</h5>
                             <div class="product__color__select">
                                 <label for="pc-10">
-                                    <input type="radio" id="pc-10">
+                                    <input  type="radio" id="pc-10">
                                 </label>
                                 <label class="active black" for="pc-11">
                                     <input type="radio" id="pc-11">
