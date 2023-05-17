@@ -64,4 +64,17 @@ class CartController extends Controller
         }
         return redirect('login');
     }
+    public function updateCart(Request $request){
+        $id_user = Auth::user()->id;
+        $productsInCart = DB::table('cart_details')->where([['id_user','=',$id_user]])->get();
+        foreach($productsInCart as $productInCart){
+            //$str = 'quantity_'+$productInCart->id;
+            DB::table('cart_details')->where([['id_user','=',$id_user], ['id_product', '=', $productInCart->id]])->update(['quantity' => $request->quantity]);
+        }
+        dd($request);
+        return redirect('home');
+    }
+    public function increaseQuantity(){
+
+    }
 }

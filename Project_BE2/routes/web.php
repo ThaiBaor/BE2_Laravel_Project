@@ -103,8 +103,9 @@ Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
 
 // Cart
-Route::get('cart', [CartController::class, 'getAllProductsInCart'])->name('show-cart');
+Route::get('/cart', [CartController::class, 'getAllProductsInCart'])->name('show-cart');
 Route::get('add-to-cart/{id}',[CartController::class, 'addProductToCart'])->name('add-to-cart');
 Route::get('remove-from-cart/{id}',[CartController::class, 'removeProductFromCart'])->name('remove-from-cart');
 Route::get('clear-cart',[CartController::class, 'clearCart'])->name('clear-cart');
+Route::get('update-cart',[CartController::class, 'updateCart'])->name('update-cart');
 //--------
