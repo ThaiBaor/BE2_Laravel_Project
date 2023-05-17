@@ -32,7 +32,6 @@ Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('e
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
 Route::get('searchproduct', [ProductController::class, 'searchProduct'])->name('searchproduct');
 Route::get('searchproductuser', [ProductController::class, 'searchProductUser'])->name('searchproductuser');
-Route::get('searchproductbycategory', [ProductController::class, 'searchProductByCategory'])->name('searchproductcategory');
 //--------------
 
 
@@ -47,18 +46,9 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 //---------
 
 // Layout fontend
-<<<<<<< HEAD
-Route::get('/shop', [HomeController::class, 'goShop'])->name('shop');
-Route::get('/home', [HomeController::class, 'goHome'])->name('home');
-=======
 Route::get('/shop',[ShopController::class, 'getAllProducts'])->name('shop');
 Route::get('/home',[HomeController::class, 'goHome'])->name('home');
-<<<<<<< HEAD
 Route::get('/shopbycategory',[ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
->>>>>>> user/TimKiemSanPham
-=======
-Route::get('/shopbycategory',[ShopByCategoryController::class, 'getAllProducts'])->name('shopbycategory');
->>>>>>> user/HienThiTheoDanhMuc
 
 Route::get('/detail', function () {
     return view('detail');
@@ -113,13 +103,7 @@ Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name(
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
-<<<<<<< HEAD
 Route::get('/google',[GoogleController::class,'redirect'])->name('google');
 Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
-=======
-
-//-------------
-Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
->>>>>>> user/HienThiTheoDanhMuc
