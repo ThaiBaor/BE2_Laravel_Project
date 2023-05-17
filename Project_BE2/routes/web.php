@@ -147,3 +147,4 @@ Route::get('remove-from-cart/{id}', [CartController::class, 'removeProductFromCa
 Route::get('clear-cart', [CartController::class, 'clearCart'])->name('clear-cart');
 Route::get('update-cart', [CartController::class, 'updateCart'])->name('update-cart');
 //--------
+Route::get('useVoucher', [CartController::class, 'useVoucher'])->name('useVoucher');
