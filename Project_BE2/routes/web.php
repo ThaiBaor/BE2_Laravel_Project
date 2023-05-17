@@ -12,6 +12,7 @@ use App\Http\Controllers\ShopByCategoryController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\LangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,3 +106,8 @@ Route::get('/google',[GoogleController::class,'redirect'])->name('google');
 Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
+
+// Multilang
+
+Route::get('change-language/{language}', [LangController::class, 'changeLanguage'])->name('change-language');
+//---------

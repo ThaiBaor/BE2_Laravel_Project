@@ -38,28 +38,28 @@
             <div class="row">
                 <div class="col-lg-6 col-md-7">
                     <div class="header__top__left">
-                        <p>Free shipping, 30-day return or refund guarantee.</p>
+                        <p>{{ __('label.welcome') }}</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         @guest
                         <div class="header__top__links">
-                            <a href="{{route('login')}}">Login</a>
+                            <a href="{{route('login')}}">{{ __('label.login') }}</a>
                         </div>
                         <div class="header__top__links">
-                            <a href="{{ route('registration') }}">Sign up</a>
+                            <a href="{{ route('registration') }}">{{ __('label.signup') }}</a>
                         </div>
                         @else
                         <div class="header__top__links">
-                            <a href="{{ route('signout') }}">Log out</a>
+                            <a href="{{ route('signout') }}">{{ __('label.logout') }}</a>
                         </div>
                         @endguest
                         <div class="header__top__hover">
-                            <span>Language<i class="arrow_carrot-down"></i></span>
+                            <span>{{ __('label.language') }}<i class="arrow_carrot-down"></i></span>
                             <ul>
-                                <li><a class="" href="">EngLish</a></li>
-                                <li><a href="">Tiếng Việt</a></li>
+                                <li><a href="{{ route('change-language', 'en') }}">EngLish</a></li>
+                                <li><a href="{{ route('change-language', 'vi') }}">Tiếng Việt</a></li>
                             </ul>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                     <form action="{{ route('searchproductuser') }}" method="GET">
             <div CLASS="input-group">
             @csrf
-            <input type="text" name="keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" name="keyword" CLASS="form-control bg-light border-2 small " placeholder="{{ __('label.search') }}" aria-label="Search" aria-describedby="basic-addon2">
             <div CLASS="input-group-append">
             <button CLASS="btn btn-primary" type="submit">
                 <i CLASS="fas fa-search fa-sm"></i>
@@ -88,13 +88,13 @@
                     </div>
                 </div>
                     </form>
-                        <li class=""><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="{{route('shop')}}">Shop</a></li>
-                        <li><a href="{{route('shophot')}}">Hot</a></li>
-                        <li><a href="{{route('shop')}}">Categories</a>
+                        <li class=""><a href="{{route('home')}}">{{ __('label.home') }}</a></li>
+                        <li><a href="{{route('shop')}}">{{ __('label.shop') }}</a></li>
+                        <li><a href="#">Hot</a></li>
+                        <li><a href="{{route('shop')}}">{{ __('label.category') }}</a>
                             <ul class="dropdown">
                                 @foreach($categories_global as $category)
-                                <li><a href="{{route('shop-category', $category->id)}}">{{$category->cate_name}}</a></li>
+                                <li><a href="#">{{$category->cate_name}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
