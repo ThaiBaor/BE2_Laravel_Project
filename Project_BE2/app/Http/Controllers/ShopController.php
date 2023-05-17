@@ -12,7 +12,7 @@ class ShopController extends Controller
     }
     public function getProductByCate($id_category)
     {
-        $products = DB::table('products')->join('categories', 'products.id_category', '=', 'categories.id')->where('id_category', $id_category)->paginate(10);
+        $products = DB::table('products')->join('categories', 'products.id_category', '=', 'categories.id')->where('id_category', $id_category)->paginate(5);
         return view('shop', compact('products'));
     }
 }
