@@ -110,3 +110,4 @@ Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 
 //-------------
 Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
+Route::get('shophot', [ProductController::class, 'getProductHot'])->name('shophot');
