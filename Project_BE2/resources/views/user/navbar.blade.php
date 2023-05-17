@@ -89,7 +89,6 @@
                     </form>
                         <li class=""><a href="{{route('home')}}">{{ __('label.home') }}</a></li>
                         <li><a href="{{route('shop')}}">{{ __('label.shop') }}</a></li>
-                        <li><a href="#">Hot</a></li>
                         <li><a href="{{route('shop')}}">{{ __('label.category') }}</a>
                             <ul class="dropdown">
                                 @foreach($categories_global as $category)

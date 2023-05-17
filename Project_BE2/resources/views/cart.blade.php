@@ -99,7 +99,7 @@
                     <h6>{{ __('label.totalcart') }}</h6>
                     <ul>
                         <li>{{ __('label.subtotal') }} <span>$ 0</span></li>
-                        <li>{{ __('label.total') }} <span>$ 0</span></li>
+                        <li>{{ __('label.total') }} <span>$ {{$total}}</span></li>
                     </ul>
                     <a href="#" class="primary-btn">{{ __('label.checkout') }}</a>
                 </div>
