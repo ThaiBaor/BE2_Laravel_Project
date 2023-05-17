@@ -165,7 +165,7 @@
                         </div>
                         <div class="product__item__text">
                             <h6>{{$product->name}}</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <a href="{{ route('add-to-cart', $product->id) }}" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
