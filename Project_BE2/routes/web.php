@@ -107,3 +107,8 @@ Route::get('/google',[GoogleController::class,'redirect'])->name('google');
 Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
+=======
+
+//-------------
+Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
+>>>>>>> user/HienThiTheoDanhMuc
