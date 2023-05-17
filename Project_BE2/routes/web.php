@@ -5,23 +5,14 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
->>>>>>> origin/main
 use App\Http\Controllers\HomeController;
-
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopByCategoryController;
-<<<<<<< HEAD
-use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductDetailController;
-
-=======
 use App\Http\Controllers\CartController;
->>>>>>> origin/main
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\LangController;
@@ -124,7 +115,6 @@ Route::get('/callback',[FacebookController::class,'callBackFaceBook'])->name('ca
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
 
-<<<<<<< HEAD
 
 //-------------
 Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
@@ -132,9 +122,7 @@ Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->n
 
 //
 Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
-=======
 // Multilang
 
 Route::get('change-language/{language}', [LangController::class, 'changeLanguage'])->name('change-language');
 //---------
->>>>>>> origin/main
