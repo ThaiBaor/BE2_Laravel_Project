@@ -157,7 +157,6 @@
                 <div class="row">
                 @foreach($products as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6">
-
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
                             <ul class="product__hover">
@@ -177,7 +176,7 @@
                             <h5>${{$product->price}}</h5>
                             <div class="product__color__select">
                                 <label for="pc-10">
-                                    <input type="radio" id="pc-10">
+                                    <input  type="radio" id="pc-10">
                                 </label>
                                 <label class="active black" for="pc-11">
                                     <input type="radio" id="pc-11">
