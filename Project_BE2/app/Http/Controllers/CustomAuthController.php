@@ -12,6 +12,9 @@ class CustomAuthController extends Controller
 {
     public function showFormLogin()
     {
+        if (Auth::check()){
+            return redirect('home');
+        }
         return view('login');
     }
 
@@ -33,6 +36,9 @@ class CustomAuthController extends Controller
 
     public function showFormRegistration()
     {
+        if (Auth::check()){
+            return redirect('home');
+        }
         return view('registration');
     }
 
@@ -58,14 +64,7 @@ class CustomAuthController extends Controller
         ]);
     }
 
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('home');
-        }
-
-        return redirect("login")->withSuccess('You are not allowed to access');
-    }
+    
 
     public function signOut() {
         Auth::logout();

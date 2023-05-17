@@ -5,16 +5,26 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FacebookController;
+>>>>>>> origin/main
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopByCategoryController;
+<<<<<<< HEAD
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductDetailController;
 
+=======
+use App\Http\Controllers\CartController;
+>>>>>>> origin/main
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\LangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,9 +68,6 @@ Route::get('/detail', function () {
     return view('detail');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
 Route::get('/checkout', function () {
     return view('checkout');
 });
@@ -107,11 +114,17 @@ Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name(
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
+//login google
 Route::get('/google',[GoogleController::class,'redirect'])->name('google');
 Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
+//login facebook
+Route::get('/facebook',[FacebookController::class,'redirect'])->name('facebook');
+Route::get('/callback',[FacebookController::class,'callBackFaceBook'])->name('callback');
+
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
 
+<<<<<<< HEAD
 
 //-------------
 Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
@@ -119,3 +132,9 @@ Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->n
 
 //
 Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
+=======
+// Multilang
+
+Route::get('change-language/{language}', [LangController::class, 'changeLanguage'])->name('change-language');
+//---------
+>>>>>>> origin/main

@@ -25,6 +25,7 @@ class ProductController extends Controller
 
     public function customProduct(Request $request)
     {
+        
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -63,6 +64,7 @@ class ProductController extends Controller
 
     public function getDataEdit($id)
     {
+        AdminController::checkPermission();
         $getData = DB::table('products')->select('*')->where('id', $id)->get();
         $categories = DB::table('categories')->select('*')->get();
         $size = DB::table('sizes')->select('*')->get();
@@ -90,10 +92,9 @@ class ProductController extends Controller
         //Thực hiện chuyển trang
         return redirect('listproduct');
     }
-
-
     public function deleteProduct($id)
     {
+        AdminController::checkPermission();
         $deleteData = DB::table('products')->where('id', '=', $id)->delete();
         return redirect('listproduct');
     }
@@ -101,6 +102,7 @@ class ProductController extends Controller
 
     public function listProduct()
     {
+        AdminController::checkPermission();
         $products = DB::table('products')->paginate(4);
         return view('admin.content.listproduct', compact('products'));
     }
@@ -122,5 +124,11 @@ class ProductController extends Controller
         $keyword = $request->keyword;
         $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
         return view('shop', compact('products'));
+    }
+    public function getProductHot(Request $request)
+    {
+        $keyword = $request->keyword;
+        $products = DB::table('products')->orderBy('sold', 'desc')->paginate(10);
+        return view('shophot', compact('products'));
     }
 }
