@@ -13,7 +13,7 @@
                             <h2>Fall - Winter Collections 2030</h2>
                             <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
-                            <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <a href="#" class="primary-btn">{{ __('label.shopnow') }} <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -42,7 +42,7 @@
                             <h2>Fall - Winter Collections 2030</h2>
                             <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
-                            <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <a href="#" class="primary-btn">{{ __('label.shopnow') }} <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2>Clothing Collections 2030</h2>
-                        <a href="#">Shop now</a>
+                        <a href="#">{{ __('label.shopnow') }}</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2>Accessories</h2>
-                        <a href="#">Shop now</a>
+                        <a href="#">{{ __('label.shopnow') }}</a>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2>Shoes Spring 2030</h2>
-                        <a href="#">Shop now</a>
+                        <a href="#">{{ __('label.shopnow') }}</a>
                     </div>
                 </div>
             </div>
@@ -115,9 +115,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="filter__controls">
-                    <li class="active" data-filter="*">Hot</li>
-                    <li data-filter=".new-arrivals">New Arrivals</li>
-                    <li data-filter=".hot-sales">Hot Sales</li>
+                <li class="active" data-filter="*">{{ __('label.hot') }}</li>
+                    <li data-filter=".new-arrivals">{{ __('label.newarrival') }}</li>
+                    <li data-filter=".hot-sales">{{ __('label.bestseller') }}</li>
                 </ul>
             </div>
         </div>
@@ -125,8 +125,7 @@
             @foreach($newarrival as $product)
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg"
-                        data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
+                    <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
                         <span class="label">New</span>
                         <ul class="product__hover">
                             <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
@@ -137,7 +136,7 @@
                     </div>
                     <div class="product__item__text">
                         <h6>{{$product->name}}</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ {{ __('label.addtocart') }}</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -164,8 +163,7 @@
             @foreach($bestseller as $product)
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg"
-                        data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
+                    <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
                         <span class="label">New</span>
                         <ul class="product__hover">
                             <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
@@ -176,7 +174,7 @@
                     </div>
                     <div class="product__item__text">
                         <h6>{{$product->name}}</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ {{ __('label.addtocart') }}</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -245,7 +243,7 @@
                             <p>Seconds</p>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">Shop now</a>
+                    <a href="#" class="primary-btn">{{ __('label.shopnow') }}</a>
                 </div>
             </div>
         </div>
@@ -259,18 +257,12 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="instagram__pic">
-                    <div class="instagram__pic__item set-bg"
-                        data-setbg="{{asset('storage/img')}}/instagram/instagram-1.jpg"></div>
-                    <div class="instagram__pic__item set-bg"
-                        data-setbg="{{asset('storage/img')}}/instagram/instagram-2.jpg"></div>
-                    <div class="instagram__pic__item set-bg"
-                        data-setbg="{{asset('storage/img')}}/instagram/instagram-3.jpg"></div>
-                    <div class="instagram__pic__item set-bg"
-                        data-setbg="{{asset('storage/img')}}/instagram/instagram-4.jpg"></div>
-                    <div class="instagram__pic__item set-bg"
-                        data-setbg="{{asset('storage/img')}}/instagram/instagram-5.jpg"></div>
-                    <div class="instagram__pic__item set-bg"
-                        data-setbg="{{asset('storage/img')}}/instagram/instagram-6.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="{{asset('storage/img')}}/instagram/instagram-1.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="{{asset('storage/img')}}/instagram/instagram-2.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="{{asset('storage/img')}}/instagram/instagram-3.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="{{asset('storage/img')}}/instagram/instagram-4.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="{{asset('storage/img')}}/instagram/instagram-5.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="{{asset('storage/img')}}/instagram/instagram-6.jpg"></div>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -286,50 +278,4 @@
 </section>
 <!-- Instagram Section End -->
 
-<!-- Latest Blog Section Begin -->
-<section class="latest spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <span>Latest News</span>
-                    <h2>Fashion New Trends</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="{{asset('storage/img')}}/blog/blog-1.jpg"></div>
-                    <div class="blog__item__text">
-                        <span><img src="{{asset('storage/img')}}/icon/calendar.png" alt=""> 16 February 2020</span>
-                        <h5>What Curling Irons Are The Best Ones</h5>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="{{asset('storage/img')}}/blog/blog-2.jpg"></div>
-                    <div class="blog__item__text">
-                        <span><img src="{{asset('storage/img')}}/icon/calendar.png" alt=""> 21 February 2020</span>
-                        <h5>Eternity Bands Do Last Forever</h5>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="{{asset('storage/img')}}/blog/blog-3.jpg"></div>
-                    <div class="blog__item__text">
-                        <span><img src="{{asset('storage/img')}}/icon/calendar.png" alt=""> 28 February 2020</span>
-                        <h5>The Health Benefits Of Sunglasses</h5>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Latest Blog Section End -->
 @endsection

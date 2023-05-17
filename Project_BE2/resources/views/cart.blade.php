@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>Shopping Cart</h4>
+                    <h4>{{ __('label.cart') }}</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Shopping Cart</span>
+                        <a href="./index.html">{{ __('label.cart') }}</a>
+                        <a href="./shop.html">{{ __('label.store') }}</a>
+                        <span>{{ __('label.cart') }}</span>
                     </div>
                 </div>
             </div>
@@ -30,9 +30,9 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
+                                    <th>{{ __('label.product') }}</th>
+                                    <th>{{ __('label.quantity') }}</th>
+                                    <th>{{ __('label.total') }}</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -69,39 +69,39 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="{{ route('shop') }}">Continue Shopping</a>
+                            <a href="{{ route('shop') }}">{{ __('label.continueshop') }}</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-sm-3">
                         <div class="continue__btn update__btn">
                             <button type="submit">
-                                <a href="{{ route('update-cart') }}">Update</a>
+                                <a href="{{ route('update-cart') }}">{{ __('label.update') }}</a>
                             </button>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="continue__btn update__btn">
-                            <a href="{{ route('clear-cart') }}"><i class="fa fa-spinner"></i>Clear</a>
+                            <a href="{{ route('clear-cart') }}"><i class="fa fa-spinner"></i>{{ __('label.clear') }}</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="cart__discount">
-                    <h6>Discount codes</h6>
+                    <h6>{{ __('label.voucher') }}</h6>                                          
                     <form action="{{route('useVoucher')}}" method="get">
-                        <input type="text" name= "voucher" placeholder="Coupon code">
-                        <input type="hidden" name= "total" value="{{$total}}"placeholder="Coupon code">
-                        <button type="submit">Apply</button>
+                        <input type="text" name= "voucher" placeholder="{{ __('label.voucher') }}">
+                        <input type="hidden" name= "total" value="{{$total}}" placeholder="Coupon code">
+                        <button type="submit">{{ __('label.apply') }}</button>
                     </form>
                 </div>
                 <div class="cart__total">
-                    <h6>Cart total</h6>
+                    <h6>{{ __('label.totalcart') }}</h6>
                     <ul>
-                        <li>Subtotal <span>$ 169.50</span></li>
-                        <li>Total <span>{{$total}}</span></li>
+                        <li>{{ __('label.subtotal') }} <span>$ 0</span></li>
+                        <li>{{ __('label.total') }} <span>$ 0</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Proceed to checkout</a>
+                    <a href="#" class="primary-btn">{{ __('label.checkout') }}</a>
                 </div>
             </div>
         </div>
