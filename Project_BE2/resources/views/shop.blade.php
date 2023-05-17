@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>Shop</h4>
+                    <h4>{{ __('label.store') }}</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">Home</a>
-                        <span>Shop</span>
+                        <a href="./index.html">{{ __('label.home') }}</a>
+                        <span>{{ __('label.store') }}</span>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                         <div class="accordion" id="accordionExample">
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                                    <a data-toggle="collapse" data-target="#collapseOne">{{ __('label.category') }}</a>
                                 </div>
                                 <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -50,7 +50,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
+                                    <a data-toggle="collapse" data-target="#collapseThree">{{ __('label.price') }}</a>
                                 </div>
                                 <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseFour">Size</a>
+                                    <a data-toggle="collapse" data-target="#collapseFour">{{ __('label.size') }}</a>
                                 </div>
                                 <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -104,7 +104,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
+                                    <a data-toggle="collapse" data-target="#collapseFive">{{ __('label.color') }}</a>
                                 </div>
                                 <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -124,7 +124,6 @@
                                             <label class="c-white" for="sp-5">
                                                 <input type="radio" id="sp-5">
                                             </label>
-
                                         </div>
                                     </div>
                                 </div>
