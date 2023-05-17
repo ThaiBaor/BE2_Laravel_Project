@@ -8,25 +8,24 @@
 <div class="offcanvas-menu-wrapper">
     <div class="offcanvas__option">
         <div class="offcanvas__links">
-            <a href="{{route('login')}}">Sign in</a>           
+            <a href="{{route('login')}}">{{ __('label.login') }}</a>           
         </div>
         <div class="offcanvas__top__hover">
-            <span>Language<i class="arrow_carrot-down"></i></span>
+            <span>{{ __('label.language') }}<i class="arrow_carrot-down"></i></span>
             <ul>
-                <li><a class="active" href="">EngLish</a></li>
-                <li><a href="">Tiếng Việt</a></li>
+                <li><a class="active" href="{{ route('change-language', 'en') }}">EngLish</a></li>
+                <li><a href="{{ route('change-language', 'vi') }}">Tiếng Việt</a></li>
             </ul>
         </div>
     </div>
     <div class="offcanvas__nav__option">
-        <a href="#" class="search-switch"><img src="{{asset('storage/img/icon/search.png')}}" alt=""></a>
         <a href="#"><img src="{{asset('storage/img/icon/heart.png')}}" alt=""></a>
         <a href="{{ route('show-cart') }}"><img src="{{asset('storage/img/icon/cart.png')}}" alt=""> <span>0</span></a>
-        <div class="price">$0.00</div>
+        <div class="price">$0</div>
     </div>
     <div id="mobile-menu-wrap"></div>
     <div class="offcanvas__text">
-        <p>Free shipping, 30-day return or refund guarantee.</p>
+        <p>{{ __('label.welcome') }}</p>
     </div>
 </div>
 <!-- Offcanvas Menu End -->
@@ -71,7 +70,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="{{route('home')}}"><img src="{{asset('storage/img/logo.png')}}" alt=""></a>
+                    <a href="{{route('home')}}"><img src="{{asset('storage/img/logo1.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -103,7 +102,6 @@
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
-                    <a href="#" class="search-switch"><img src="{{asset('storage/img/icon/search.png')}}" alt=""></a>
                     <a href="#"><img src="{{asset('storage/img/icon/heart.png')}}" alt=""></a>
                     <a href="{{ route('show-cart') }}"><img src="{{asset('storage/img/icon/cart.png')}}" alt=""> <span>0</span></a>
                     

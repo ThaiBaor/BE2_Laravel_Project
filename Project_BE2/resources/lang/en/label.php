@@ -28,5 +28,6 @@ return [
     'bestseller' => 'Best Sellers',
     'price' => 'Price',
     'size' => 'Size',
-    'color' => 'Color'
+    'color' => 'Color',
+    'addtocart' => 'Add to cart',
 ];

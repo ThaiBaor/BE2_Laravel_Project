@@ -28,5 +28,6 @@ return [
     'bestseller' => 'Bán chạy',
     'price' => 'Giá tiền',
     'size' => 'Kích thước',
-    'color' => 'Màu sắc'
+    'color' => 'Màu sắc',
+    'addtocart' => 'Thêm vào giỏ hàng'
 ];
