@@ -6,10 +6,16 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopByCategoryController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductDetailController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\LangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +36,7 @@ Route::get('getdataedt/id{id}', [ProductController::class, 'getDataEdit'])->name
 Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('editproduct');
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
 Route::get('searchproduct', [ProductController::class, 'searchProduct'])->name('searchproduct');
+Route::get('searchproductuser', [ProductController::class, 'searchProductUser'])->name('searchproductuser');
 //--------------
 
 
@@ -44,8 +51,9 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 //---------
 
 // Layout fontend
-Route::get('/shop', [HomeController::class, 'goShop'])->name('shop');
+Route::get('/shop', [ShopController::class, 'getAllProducts'])->name('shop');
 Route::get('/home', [HomeController::class, 'goHome'])->name('home');
+Route::get('/shopbycategory', [ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
 
 Route::get('/detail', function () {
     return view('detail');
@@ -97,15 +105,45 @@ Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name(
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
-Route::get('/google',[GoogleController::class,'redirect'])->name('google');
-Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
+//-----------
+
+
+//login google
+Route::get('/google', [GoogleController::class, 'redirect'])->name('google');
+Route::get('/callback', [GoogleController::class, 'callBackGoogle'])->name('callback');
+//--------
+
+
+//login facebook
+Route::get('/facebook', [FacebookController::class, 'redirect'])->name('facebook');
+Route::get('/callback', [FacebookController::class, 'callBackFaceBook'])->name('callback');
+//----------
+
+
+// dashboard
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
 
+// shop
+Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
+//-------------
+
+
+
+// detail
+Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
+//---------
+
+
+// Multilang
+Route::get('change-language/{language}', [LangController::class, 'changeLanguage'])->name('change-language');
+//---------
+
+
 // Cart
 Route::get('/cart', [CartController::class, 'getAllProductsInCart'])->name('show-cart');
-Route::get('add-to-cart/{id}',[CartController::class, 'addProductToCart'])->name('add-to-cart');
-Route::get('remove-from-cart/{id}',[CartController::class, 'removeProductFromCart'])->name('remove-from-cart');
-Route::get('clear-cart',[CartController::class, 'clearCart'])->name('clear-cart');
-Route::get('update-cart',[CartController::class, 'updateCart'])->name('update-cart');
+Route::get('add-to-cart/{id}', [CartController::class, 'addProductToCart'])->name('add-to-cart');
+Route::get('remove-from-cart/{id}', [CartController::class, 'removeProductFromCart'])->name('remove-from-cart');
+Route::get('clear-cart', [CartController::class, 'clearCart'])->name('clear-cart');
+Route::get('update-cart', [CartController::class, 'updateCart'])->name('update-cart');
 //--------

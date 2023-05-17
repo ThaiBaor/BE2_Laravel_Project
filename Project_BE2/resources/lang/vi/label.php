@@ -1,11 +1,12 @@
 <?php
 return [
-    'Welcome'=>'Miễn phí vận chuyển. Hoàn trả trong 30 ngày.',
+    'welcome' => 'Miễn phí vận chuyển, Đổi trả hoàn tiền trong vòng 30 ngày.',
     'login' => 'Đăng nhập',
-    'logout'=>'Thoát',
-    'signup'=>'Đăng kí',
+    'logout' => 'Thoát',
+    'signup' => 'Đăng kí',
     'home' => 'Trang chủ',
-    'Shop' => 'Sản phẩm',
-    'category' => 'Loại'
-]
-?>
+    'category' => 'Loại',
+    'shop'=> 'Mua ngay',
+    'language' => 'Ngôn ngữ',
+    'search' => 'Tìm kiếm',
+];

@@ -1,11 +1,12 @@
 <?php
 return [
-    'Welcome'=>'Free shipping, 30-day return or refund guarantee.',
+    'welcome' => 'Free shipping, 30-day return or refund guarantee.',
     'login' => 'Login',
-    'logout'=>'Logout',
-    'signup'=>'Sign up',
+    'logout' => 'Logout',
+    'signup' => 'Signup',
     'home' => 'Home',
-    'Shop' => 'Shop',
-    'category' => 'Category'
-]
-?>
+    'category' => 'Category',
+    'shop'=> 'Shop',
+    'language' => 'Language',
+    'search' => 'Search for',
+];
