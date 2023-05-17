@@ -78,22 +78,22 @@
                 <nav class="header__menu mobile-menu">
                     <ul>
                     <form action="{{ route('searchproductuser') }}" method="GET">
-  <div CLASS="input-group">
-    @csrf
-    <input type="text" name="keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-    <div CLASS="input-group-append">
-      <button CLASS="btn btn-primary" type="submit">
-        <i CLASS="fas fa-search fa-sm"></i>
-      </button>
-    </div>
-  </div>
-</form>
+            <div CLASS="input-group">
+            @csrf
+            <input type="text" name="keyword" CLASS="form-control bg-light border-2 small " placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div CLASS="input-group-append">
+            <button CLASS="btn btn-primary" type="submit">
+                <i CLASS="fas fa-search fa-sm"></i>
+            </button>
+                    </div>
+                </div>
+                    </form>
                         <li class=""><a href="{{route('home')}}">Home</a></li>
                         <li><a href="{{route('shop')}}">Shop</a></li>
-                        <li><a href="#">Categories</a>
+                        <li><a href="{{route('shop')}}">Categories</a>
                             <ul class="dropdown">
                                 @foreach($categories_global as $category)
-                                <li><a href="#">{{$category->cate_name}}</a></li>
+                                <li><a href="{{route('shop-category', $category->id)}}">{{$category->cate_name}}</a></li>
                                 @endforeach
                             </ul>
                         </li>

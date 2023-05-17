@@ -41,7 +41,7 @@
                                         <div class="shop__sidebar__categories">
                                             <ul class="nice-scroll">
                                                 @foreach($categories_global as $category)
-                                                <li><a href="#">{{$category->cate_name}}</a></li>
+                                                <li><a href="searchproduct">{{$category->cate_name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
