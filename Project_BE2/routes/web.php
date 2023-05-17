@@ -5,10 +5,14 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopByCategoryController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductDetailController;
+
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -108,5 +112,10 @@ Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callba
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
 
+
 //-------------
 Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
+
+
+//
+Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
