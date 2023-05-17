@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use View;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -29,5 +30,4 @@ class AppServiceProvider extends ServiceProvider
             $view->with('categories_global', $categories);
         });
     }
-
 }

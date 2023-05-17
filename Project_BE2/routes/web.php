@@ -6,7 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\GoogleController;
-use App\Http\Controllers\FacebookController;
+ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopByCategoryController;
@@ -36,7 +36,8 @@ Route::get('getdataedt/id{id}', [ProductController::class, 'getDataEdit'])->name
 Route::post('editproduct', [ProductController::class, 'updateProduct'])->name('editproduct');
 Route::get('deleteproduct/id{id}', [ProductController::class, 'deleteProduct'])->name('deleteproduct');
 Route::get('searchproduct', [ProductController::class, 'searchProduct'])->name('searchproduct');
-Route::get('searchproductuser', [ProductController::class, 'searchProductUser'])->name('searchproductuser');
+Route::get('searchproductuser', [ProductController::class, 'searchProductUser'])->name('searchproductuser');;
+
 //--------------
 
 
@@ -51,9 +52,9 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 //---------
 
 // Layout fontend
-Route::get('/shop', [ShopController::class, 'getAllProducts'])->name('shop');
-Route::get('/home', [HomeController::class, 'goHome'])->name('home');
-Route::get('/shopbycategory', [ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
+Route::get('/shop',[ShopController::class, 'getAllProducts'])->name('shop');
+//Route::get('/home',[HomeController::class, 'goHome'])->name('home');
+//Route::get('/shopbycategory',[ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
 
 Route::get('/detail', function () {
     return view('detail');
@@ -74,7 +75,7 @@ Route::get('/test', function () {
 });
 //-----------
 
-
+                  
 
 
 // Category
