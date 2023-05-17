@@ -51,9 +51,9 @@ Route::get('searchvoucher', [VoucherController::class, 'searchVoucher'])->name('
 //---------
 
 // Layout fontend
-Route::get('/shop',[ShopController::class, 'getAllProducts'])->name('shop');
-Route::get('/home',[HomeController::class, 'goHome'])->name('home');
-Route::get('/shopbycategory',[ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
+Route::get('/shop', [ShopController::class, 'getAllProducts'])->name('shop');
+Route::get('/home', [HomeController::class, 'goHome'])->name('home');
+Route::get('/shopbycategory', [ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
 
 Route::get('/detail', function () {
     return view('detail');
@@ -105,24 +105,45 @@ Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name(
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
-//login google
-Route::get('/google',[GoogleController::class,'redirect'])->name('google');
-Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
-//login facebook
-Route::get('/facebook',[FacebookController::class,'redirect'])->name('facebook');
-Route::get('/callback',[FacebookController::class,'callBackFaceBook'])->name('callback');
-
-Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
 
 
-//-------------
+//login google
+Route::get('/google', [GoogleController::class, 'redirect'])->name('google');
+Route::get('/callback', [GoogleController::class, 'callBackGoogle'])->name('callback');
+//--------
+
+
+//login facebook
+Route::get('/facebook', [FacebookController::class, 'redirect'])->name('facebook');
+Route::get('/callback', [FacebookController::class, 'callBackFaceBook'])->name('callback');
+//----------
+
+
+// dashboard
+Route::get('/dashboard', [AdminController::class, 'showDashboard']);
+//-----------
+
+// shop
 Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
+//-------------
 
 
-//
+
+// detail
 Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
-// Multilang
+//---------
 
+
+// Multilang
 Route::get('change-language/{language}', [LangController::class, 'changeLanguage'])->name('change-language');
 //---------
+
+
+// Cart
+Route::get('/cart', [CartController::class, 'getAllProductsInCart'])->name('show-cart');
+Route::get('add-to-cart/{id}', [CartController::class, 'addProductToCart'])->name('add-to-cart');
+Route::get('remove-from-cart/{id}', [CartController::class, 'removeProductFromCart'])->name('remove-from-cart');
+Route::get('clear-cart', [CartController::class, 'clearCart'])->name('clear-cart');
+Route::get('update-cart', [CartController::class, 'updateCart'])->name('update-cart');
+//--------
