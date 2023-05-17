@@ -94,7 +94,7 @@
                         <li><a href="{{route('shop')}}">{{ __('label.category') }}</a>
                             <ul class="dropdown">
                                 @foreach($categories_global as $category)
-                                <li><a href="#">{{$category->cate_name}}</a></li>
+                                <li><a href="{{route('shop-category', $category->id)}}">{{$category->cate_name}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
