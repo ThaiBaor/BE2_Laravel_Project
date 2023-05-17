@@ -41,7 +41,7 @@
                                         <div class="shop__sidebar__categories">
                                             <ul class="nice-scroll">
                                                 @foreach($categories_global as $category)
-                                                <li><a href="searchproduct">{{$category->cate_name}}</a></li>
+                                                <li><a href="searchproductuser">{{$category->cate_name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -159,7 +159,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
 
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/product-2.jpg">
                             <ul class="product__hover">
                                 <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
                             </ul>

@@ -14,4 +14,8 @@ class HomeController extends Controller
     {
         return view('shop');
     }
+    public function goShopByCategory()
+    {
+        return view('shopbycategory');
+    }
 }
