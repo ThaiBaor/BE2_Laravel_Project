@@ -93,3 +93,4 @@ Route::get('registration', [CustomAuthController::class, 'showFormRegistration']
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
 
 //-------------
+Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->name('shop-category');
