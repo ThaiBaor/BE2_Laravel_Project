@@ -149,3 +149,6 @@ Route::get('clear-cart', [CartController::class, 'clearCart'])->name('clear-cart
 Route::get('update-cart', [CartController::class, 'updateCart'])->name('update-cart');
 //--------
 Route::get('useVoucher', [CartController::class, 'useVoucher'])->name('useVoucher');
+
+//Home
+Route::get('/home', [HomeController::class, 'getProductsForHome'])->name('home');
