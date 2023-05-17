@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopByCategoryController;
@@ -101,7 +102,12 @@ Route::post('submit-login', [CustomAuthController::class, 'submitLogin'])->name(
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::get('registration', [CustomAuthController::class, 'showFormRegistration'])->name('registration');
 Route::post('submit-registration', [CustomAuthController::class, 'submitRegistration'])->name('submit-registration');
+//login google
 Route::get('/google',[GoogleController::class,'redirect'])->name('google');
 Route::get('/callback',[GoogleController::class,'callBackGoogle'])->name('callback');
+//login facebook
+Route::get('/facebook',[FacebookController::class,'redirect'])->name('facebook');
+Route::get('/callback',[FacebookController::class,'callBackFaceBook'])->name('callback');
+
 Route::get('/dashboard', [AdminController::class, 'showDashboard']);
 //-----------
