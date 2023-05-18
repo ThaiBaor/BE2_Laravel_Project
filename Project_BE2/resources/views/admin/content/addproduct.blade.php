@@ -31,10 +31,22 @@
                                 <input type="text" placeholder="Sold" id="sold" class="form-control" name="sold" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="ID_category" id="id_category" class="form-control" name="id_category" required autofocus>
+                                <select placeholder="ID Category" name="id_category" id="id_category" class="form-control custom-select">
+                                    <option selected disabled>Select one</option>
+                                    
+                                    @foreach ($categories as $value)
+                                        <option value="{{$value->id}}">{{$value->cate_name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="ID Size" id="id_size" class="form-control" name="id_size" required autofocus>
+                                <select placeholder="ID Size" name="id_size" id="id_size" class="form-control custom-select">
+                                    <option selected disabled>Select one</option>
+                                    
+                                    @foreach ($size as $value)
+                                        <option value="{{$value->id}}">{{$value->size_code}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="photo">Attach a photograph</label>

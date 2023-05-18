@@ -37,13 +37,11 @@
                                 <div class="text-center">
                                     <p>or login with:</p>
                                     <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{{route('facebook')}}"><i class="fab fa-facebook-f"></i></a>
 
                                     </button>
                                     <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <a href=""><i class="fab fa-google"></i></a>
-
-                                    </button>
+                                        <a href="{{route('google')}}"><i class="fab fa-google"></i></a>
                                     </button>
                                 </div>
                             </form>

@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>{{ __('label.store') }}</h4>
+                    <h4>Shop</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">{{ __('label.home') }}</a>
-                        <span>{{ __('label.store') }}</span>
+                        <a href="./index.html">Home</a>
+                        <span>Shop</span>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,9 @@
                 <div class="row">
                     @foreach($products as $product)
                     <div class="col-lg-4 col-md-4 col-sm-6">
+
                         <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
+                            <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/product-2.jpg">
                                 <ul class="product__hover">
                                     <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
                                 </ul>

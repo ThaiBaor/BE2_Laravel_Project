@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\AdminController;
 use Hash;
 use Session;
 use App\Models\User;
@@ -15,11 +17,15 @@ class ProductController extends Controller
 {
     public function registrationProduct()
     {
-        return view('admin.content.addproduct');
+        AdminController::checkPermission();
+        $categories = DB::table('categories')->select('*')->get();
+        $size = DB::table('sizes')->select('*')->get();
+        return view('admin.content.addproduct', ['categories' => $categories, 'size' => $size]);
     }
 
     public function customProduct(Request $request)
     {
+        
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -58,8 +64,11 @@ class ProductController extends Controller
 
     public function getDataEdit($id)
     {
+        AdminController::checkPermission();
         $getData = DB::table('products')->select('*')->where('id', $id)->get();
-        return view('admin.content.editproduct')->with('getDataProductById', $getData);
+        $categories = DB::table('categories')->select('*')->get();
+        $size = DB::table('sizes')->select('*')->get();
+        return view('admin.content.editproduct', ['getDataProductById' => $getData, 'categories' => $categories, 'size' => $size]);
     }
 
     public function updateProduct(Request $request)
@@ -68,7 +77,7 @@ class ProductController extends Controller
         $path = 'uploads';
         $fileName = $file->getClientOriginalName();
         $file->move($path, $fileName);
-        
+
         $updateData = DB::table('products')->where('id', $request->id)->update([
             'name' => $request->name,
             'description' => $request->description,
@@ -83,10 +92,9 @@ class ProductController extends Controller
         //Thực hiện chuyển trang
         return redirect('listproduct');
     }
-    
-
     public function deleteProduct($id)
     {
+        AdminController::checkPermission();
         $deleteData = DB::table('products')->where('id', '=', $id)->delete();
         return redirect('listproduct');
     }
@@ -94,6 +102,7 @@ class ProductController extends Controller
 
     public function listProduct()
     {
+        AdminController::checkPermission();
         $products = DB::table('products')->paginate(4);
         return view('admin.content.listproduct', compact('products'));
     }
@@ -103,5 +112,23 @@ class ProductController extends Controller
         $keyword = $request->keyword;
         $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
         return view('admin.content.listsearchproduct', compact('products'));
+    }
+    public function searchProductUser(Request $request)
+    {
+        $keyword = $request->keyword;
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
+        return view('shop', compact('products'));
+    }
+    public function searchProductByCategory(Request $request)
+    {
+        $keyword = $request->keyword;
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(4);
+        return view('shop', compact('products'));
+    }
+    public function getProductHot(Request $request)
+    {
+        $keyword = $request->keyword;
+        $products = DB::table('products')->orderBy('sold', 'desc')->paginate(10);
+        return view('shophot', compact('products'));
     }
 }

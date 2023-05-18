@@ -1,14 +1,14 @@
 <!-- Topbar -->
 <nav CLASS="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
- 
+
   <!-- Sidebar Toggle (Topbar) -->
   <button id="sidebarToggleTop" CLASS="btn btn-link d-md-none rounded-circle mr-3">
     <i CLASS="fa fa-bars"></i>
   </button>
- 
+
   <!-- Topbar Search -->
-   
-    <!-- <div CLASS="input-group">
+
+  <!-- <div CLASS="input-group">
       <input type="text" CLASS="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
       <div CLASS="input-group-append">
         <button CLASS="btn btn-primary" type="button">
@@ -16,11 +16,11 @@
         </button>
       </div>
     </div> -->
-   
- 
+
+
   <!-- Topbar Navbar -->
   <ul CLASS="navbar-nav ml-auto">
- 
+
     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
     <li CLASS="nav-item dropdown no-arrow d-sm-none">
       <a CLASS="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,7 +40,7 @@
         </form>
       </div>
     </li>
- 
+
     <!-- Nav Item - Alerts -->
     <li CLASS="nav-item dropdown no-arrow mx-1">
       <a CLASS="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,11 +64,11 @@
             <span CLASS="font-weight-bold">A NEW monthly report is ready to download!</span>
           </div>
         </a>
- 
+
         <a CLASS="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
       </div>
     </li>
- 
+
     <!-- Nav Item - Messages -->
     <li CLASS="nav-item dropdown no-arrow mx-1">
       <a CLASS="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -101,13 +101,13 @@
             <div CLASS="small text-gray-500">Jae Chun · 1d</div>
           </div>
         </a>
- 
+
         <a CLASS="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
       </div>
     </li>
- 
+
     <div CLASS="topbar-divider d-none d-sm-block"></div>
- 
+
     <!-- Nav Item - User Information -->
     <li CLASS="nav-item dropdown no-arrow">
       <a CLASS="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,23 +120,14 @@
           <i CLASS="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
           Profile
         </a>
-        <a CLASS="dropdown-item" href="#">
-          <i CLASS="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-          Settings
-        </a>
-        <a CLASS="dropdown-item" href="#">
-          <i CLASS="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-          Activity Log
-        </a>
-        <div CLASS="dropdown-divider"></div>
-        <a CLASS="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+        <a CLASS="dropdown-item" href="{{ route('signout') }}">
           <i CLASS="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
           Logout
         </a>
       </div>
     </li>
- 
+
   </ul>
- 
+
 </nav>
 <!-- End of Topbar -->

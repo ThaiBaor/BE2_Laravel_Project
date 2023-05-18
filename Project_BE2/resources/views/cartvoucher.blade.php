@@ -37,7 +37,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $total = 0; ?>
+
                                 @foreach($productsInCart as $productInCart)
                                 <tr>
                                     <td class="product__cart__item">
@@ -58,7 +58,7 @@
                                         </div>
                                     </td>
                                     <td class="cart__price">${{$productInCart->totalPrice}}</td>
-                                    <?php $total = $total +  $productInCart->totalPrice?> 
+
                                     <td class="cart__close"><a href="{{ route('remove-from-cart', $productInCart->id) }}"><i class="fa fa-close"></i></a></td>
                                 </tr>
                                 @endforeach
@@ -88,10 +88,10 @@
             </div>
             <div class="col-lg-4">
                 <div class="cart__discount">
-                    <h6>{{ __('label.voucher') }}</h6>                                          
-                    <form action="{{route('useVoucher')}}" method="get">
-                        <input type="text" name= "voucher" placeholder="{{ __('label.voucher') }}">
-                        <input type="hidden" name= "total" value="{{$total}}" placeholder="Coupon code">
+                    <h6>{{ __('label.voucher') }}</h6>
+                    <form action="#">
+                        <input type="text" name="voucher" value="{{$voucher[0]->code_voucher}}" placeholder="{{ __('label.voucher') }}">
+                        <input type="hidden" name="total" value="{{$total}}" placeholder="Coupon code">
                         <button type="submit">{{ __('label.apply') }}</button>
                     </form>
                 </div>
@@ -99,7 +99,7 @@
                     <h6>{{ __('label.totalcart') }}</h6>
                     <ul>
                         <li>{{ __('label.subtotal') }} <span>$ 0</span></li>
-                        <li>{{ __('label.total') }} <span>$ {{$total}}</span></li>
+                        <li>{{ __('label.total') }} <span>{{$total}}</span></li>
                     </ul>
                     <a href="#" class="primary-btn">{{ __('label.checkout') }}</a>
                 </div>

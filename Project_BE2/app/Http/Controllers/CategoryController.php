@@ -43,6 +43,7 @@ class CategoryController extends Controller
     
     public function getDataEditCategory($id)
     {
+        
         $getData = DB::table('categories')->select('*')->where('id', $id)->get();
         return view('admin.content.editcategory')->with('getDataCategoryById', $getData);
     }

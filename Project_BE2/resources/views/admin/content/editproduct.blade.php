@@ -35,14 +35,32 @@
                                 <input type="text" placeholder="Sold" value="{{$getDataProductById[0]->sold}}" id="sold" class="form-control" name="sold" required autofocus>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="ID Category" value="{{$getDataProductById[0]->id_category}}" id="id_category" class="form-control" name="id_category" required autofocus>
+                                <select name="id_category" id="id_category" class="form-control custom-select">
+                                    <option selected disabled>Select one</option>
+                                    @foreach ($categories as $value)
+                                    @if ($getDataProductById[0]->id_category == $value->id)
+                                    <option selected value="{{$value->id}}">{{$value->cate_name}}</option>
+                                    @else
+                                    <option value="{{$value->id}}">{{$value->cate_name}}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="ID Size" value="{{$getDataProductById[0]->id_size}}" id="id_size" class="form-control" name="id_size" required autofocus>
+                                <select name="id_size" id="id_size" class="form-control custom-select">
+                                    <option selected disabled>Select one</option>
+                                    @foreach ($size as $value)
+                                    @if ($getDataProductById[0]->id == $value->id)
+                                    <option selected value="{{$value->id}}">{{$value->size_code}}</option>
+                                    @else
+                                    <option value="{{$value->id}}">{{$value->size_code}}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="photo" class="form-label">Photo</label>
-                                <input type="file" class="form-control" id="photo" name="photo" value="{{$getDataProductById[0]->photo}}">
+                                <input type="file" class="form-control" id="photo" name="photo">
                                 <img src="{{URL::asset('uploads')}}/{{$getDataProductById[0]->photo}}" alt="" width="50">
                             </div>
                             <div class="d-grid mx-auto">
