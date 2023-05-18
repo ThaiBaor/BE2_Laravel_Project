@@ -29,5 +29,6 @@ return [
     'price' => 'Giá tiền',
     'size' => 'Kích thước',
     'color' => 'Màu sắc',
-    'addtocart' => 'Thêm vào giỏ hàng'
+    'addtocart' => 'Thêm vào giỏ hàng',
+    'soldout' => 'Hết hàng',
 ];
