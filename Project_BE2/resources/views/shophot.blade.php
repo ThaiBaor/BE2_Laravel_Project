@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>{{ __('label.store') }}</h4>
+                    <h4>Shop</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">{{ __('label.home') }}</a>
-                        <span>{{ __('label.store') }}</span>
+                        <a href="./index.html">Home</a>
+                        <span>Shop</span>
                     </div>
                 </div>
             </div>
@@ -34,14 +34,14 @@
                         <div class="accordion" id="accordionExample">
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseOne">{{ __('label.category') }}</a>
+                                    <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
                                 </div>
                                 <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shop__sidebar__categories">
                                             <ul class="nice-scroll">
                                                 @foreach($categories_global as $category)
-                                                <li><a href="searchproduct">{{$category->cate_name}}</a></li>
+                                                <li><a href="searchproductuser">{{$category->cate_name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseThree">{{ __('label.price') }}</a>
+                                    <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
                                 </div>
                                 <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseFour">{{ __('label.size') }}</a>
+                                    <a data-toggle="collapse" data-target="#collapseFour">Size</a>
                                 </div>
                                 <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -104,7 +104,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseFive">{{ __('label.color') }}</a>
+                                    <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
                                 </div>
                                 <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
@@ -124,6 +124,7 @@
                                             <label class="c-white" for="sp-5">
                                                 <input type="radio" id="sp-5">
                                             </label>
+
                                         </div>
                                     </div>
                                 </div>
@@ -156,15 +157,16 @@
                 <div class="row">
                 @foreach($products as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6">
+
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
+                        <div class="product__item__pic set-bg" data-setbg="{{URL::asset('uploads')}}/{{$product->photo}}">
                             <ul class="product__hover">
                                 <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
                             <h6>{{$product->name}}</h6>
-                            <a href="{{ route('add-to-cart', $product->id) }}" class="add-cart">+ {{ __('label.addtocart') }}</a>
+                            <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
@@ -175,7 +177,7 @@
                             <h5>${{$product->price}}</h5>
                             <div class="product__color__select">
                                 <label for="pc-10">
-                                    <input  type="radio" id="pc-10">
+                                    <input type="radio" id="pc-10">
                                 </label>
                                 <label class="active black" for="pc-11">
                                     <input type="radio" id="pc-11">

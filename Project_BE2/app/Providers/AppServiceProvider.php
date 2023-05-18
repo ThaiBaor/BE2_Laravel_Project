@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use View;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -25,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function($view)
         {
-            $categories = DB::table('categories')->select('cate_name')->get();
+            $categories = DB::table('categories')->select('*')->get();
             $view->with('categories_global', $categories);
         });
     }

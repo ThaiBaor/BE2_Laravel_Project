@@ -18,6 +18,7 @@ class VoucherController extends Controller
 
     public function addVoucher()
     {
+        AdminController::checkPermission();
         return view('admin.content.addvoucher');
     }
 
@@ -52,6 +53,7 @@ class VoucherController extends Controller
 
     public function getDataEditVoucher($id)
     {
+        AdminController::checkPermission();
         $getData = DB::table('vouchers')->select('*')->where('id', $id)->get();
         return view('admin.content.editvoucher')->with('getDataVoucherById', $getData);
     }
@@ -75,6 +77,7 @@ class VoucherController extends Controller
 
     public function deleteVoucher($id)
     {
+        AdminController::checkPermission();
         $deleteData = DB::table('vouchers')->where('id', '=', $id)->delete();
         return redirect('listvoucher');
     }
@@ -82,6 +85,7 @@ class VoucherController extends Controller
 
     public function listVoucher()
     {
+        AdminController::checkPermission();
         $vouchers = DB::table('vouchers')->paginate(4);
         return view('admin.content.listvoucher', compact('vouchers'));
     }
