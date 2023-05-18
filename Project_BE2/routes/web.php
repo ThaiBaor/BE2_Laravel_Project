@@ -111,13 +111,13 @@ Route::post('submit-registration', [CustomAuthController::class, 'submitRegistra
 
 //login google
 Route::get('/google', [GoogleController::class, 'redirect'])->name('google');
-Route::get('/callback', [GoogleController::class, 'callBackGoogle'])->name('callback');
+Route::get('/callback', [GoogleController::class, 'callBackGoogle'])->name('callbackgoogle');
 //--------
 
 
 //login facebook
 Route::get('/facebook', [FacebookController::class, 'redirect'])->name('facebook');
-Route::get('/callback', [FacebookController::class, 'callBackFaceBook'])->name('callback');
+Route::get('/callbackFace', [FacebookController::class, 'callBackFaceBook'])->name('callbackFace');
 //----------
 
 
