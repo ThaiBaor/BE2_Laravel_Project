@@ -115,7 +115,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="filter__controls">
-                <li class="active" data-filter="*">{{ __('label.hot') }}</li>
+                    <li class="active" data-filter="*">{{ __('label.hot') }}</li>
                     <li data-filter=".new-arrivals">{{ __('label.newarrival') }}</li>
                     <li data-filter=".hot-sales">{{ __('label.bestseller') }}</li>
                 </ul>
@@ -124,16 +124,19 @@
         <div class="row product__filter">
             @foreach($newarrival as $product)
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+
                 <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
-                        <span class="label">New</span>
-                        <ul class="product__hover">
-                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/compare.png" alt="">
-                                    <span>Compare</span></a></li>
-                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
-                        </ul>
-                    </div>
+                    <a href="">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/compare.png" alt="">
+                                        <span>Compare</span></a></li>
+                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </a>
+
                     <div class="product__item__text">
                         <h6>{{$product->name}}</h6>
                         @if ($product->instock == '0')
@@ -162,20 +165,23 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
             @endforeach
             @foreach($bestseller as $product)
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
-                        <span class="label">New</span>
-                        <ul class="product__hover">
-                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/compare.png" alt="">
-                                    <span>Compare</span></a></li>
-                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
-                        </ul>
-                    </div>
+                    <a href="">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('public/uploads/')}}/{{$product->photo}}">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/compare.png" alt="">
+                                        <span>Compare</span></a></li>
+                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </a>
                     <div class="product__item__text">
                         <h6>{{$product->name}}</h6>
                         @if ($product->instock == '0')

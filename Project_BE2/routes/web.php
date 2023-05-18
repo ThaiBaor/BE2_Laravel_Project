@@ -66,9 +66,6 @@ Route::get('/checkout', function () {
 Route::get('/wishlist', function () {
     return view('wishlist');
 });
-Route::get('/', function () {
-    return view('home');
-});
 
 Route::get('/test', function () {
     return view('test');

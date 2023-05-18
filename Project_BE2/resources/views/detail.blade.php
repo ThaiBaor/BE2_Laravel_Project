@@ -52,22 +52,22 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{$value->photo}}" alt="">
+                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-2" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{$value->photo}}" alt="">
+                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-3" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{$value->photo}}" alt="">
+                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-4" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{$value->photo}}" alt="">
+                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
                                 <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                             </div>
                         </div>
@@ -212,7 +212,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/product-1.jpg">
+                    <div class="product__item__pic set-bg" data-setbg="{{ asset('storage/img')}}/product/product-1.jpg">
                         <span class="label">New</span>
                         <ul class="product__hover">
                             <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
