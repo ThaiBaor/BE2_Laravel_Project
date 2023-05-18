@@ -970,6 +970,14 @@ ol {
 	opacity: 1;
 	visibility: visible;
 }
+.product__item:hover .product__item__text .disable {
+	top: 22px;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: none;
+	cursor: default;
+	text-decoration: line-through black;
+}
 
 .product__item:hover .product__item__text h6 {
 	opacity: 0;
