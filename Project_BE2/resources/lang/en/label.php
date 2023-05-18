@@ -30,4 +30,5 @@ return [
     'size' => 'Size',
     'color' => 'Color',
     'addtocart' => 'Add to cart',
+    'soldout' => 'Sold out',
 ];
