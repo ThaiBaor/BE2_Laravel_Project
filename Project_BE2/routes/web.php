@@ -129,7 +129,8 @@ Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->n
 
 
 // detail
-Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
+//Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
+Route::get('/detail/{id}', [ProductDetailController::class, 'getRelatedProducts'])->name('relatedproducts');
 //---------
 
 

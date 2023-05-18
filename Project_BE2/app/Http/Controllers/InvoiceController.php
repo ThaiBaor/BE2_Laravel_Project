@@ -9,12 +9,14 @@ use App\Models\User;
 use App\Models\Invoice;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\AdminController;
 
 class InvoiceController extends Controller
 {
     
     public function addInvoice()
     {
+        AdminController::checkPermission();
         return view('admin.content.addinvoice');
     }
 
@@ -48,6 +50,7 @@ class InvoiceController extends Controller
 
     public function getDataEditInvoice($id)
     {
+        AdminController::checkPermission();
         $getData = DB::table('invoices')->select('*')->where('id', $id)->get();
         return view('admin.content.editinvoice')->with('getDataInvoiceById', $getData);
     }
@@ -69,6 +72,7 @@ class InvoiceController extends Controller
 
     public function deleteInvoice($id)
     {
+        AdminController::checkPermission();
         $deleteData = DB::table('invoices')->where('id', '=', $id)->delete();
         return redirect('listinvoice');
     }
@@ -76,6 +80,7 @@ class InvoiceController extends Controller
 
     public function listInvoice()
     {
+        AdminController::checkPermission();
         $invoices = DB::table('invoices')->paginate(4);
         return view('admin.content.listinvoice', compact('invoices'));
     }
