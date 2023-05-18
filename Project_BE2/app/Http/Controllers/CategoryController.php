@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\AdminController;
 
 class CategoryController extends Controller
 {
@@ -16,6 +17,7 @@ class CategoryController extends Controller
      */
     public function addCategory()
     {
+        AdminController::checkPermission();
         return view('admin.content.addcategory');
     }   
     public function customCategory(Request $request)
@@ -30,6 +32,7 @@ class CategoryController extends Controller
 
     public function listCategory()
     {
+        AdminController::checkPermission();
         $categories = DB::table('categories')->paginate(4);
         return view('admin.content.listcategory', compact('categories'));
     }
@@ -43,7 +46,7 @@ class CategoryController extends Controller
     
     public function getDataEditCategory($id)
     {
-        
+        AdminController::checkPermission();
         $getData = DB::table('categories')->select('*')->where('id', $id)->get();
         return view('admin.content.editcategory')->with('getDataCategoryById', $getData);
     }
@@ -58,6 +61,7 @@ class CategoryController extends Controller
 
     public function deleteCategory($id)
     {
+        AdminController::checkPermission();
         $deleteData = DB::table('categories')->where('id', '=', $id)->delete();
         return redirect('listcategory');
     }
