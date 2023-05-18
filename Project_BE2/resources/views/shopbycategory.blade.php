@@ -48,11 +48,11 @@
                 <div class="row">
                     @foreach($products as $product)
                     <div class="col-lg-4 col-md-4 col-sm-6">
-
                         <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/product-2.jpg">
+                            <div class="product__item__pic set-bg" data-setbg="{{asset('uploads')}}/{{$product->photo}}">
                                 <ul class="product__hover">
                                     <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
+                                    <li><a href="{{ route('detail', $product->id) }}"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
                                 </ul>
                             </div>
                             <div class="product__item__text">

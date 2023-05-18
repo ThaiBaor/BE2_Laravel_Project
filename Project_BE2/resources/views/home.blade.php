@@ -13,7 +13,7 @@
                             <h2>Fall - Winter Collections 2030</h2>
                             <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
-                            <a href="#" class="primary-btn">{{ __('label.shopnow') }} <span class="arrow_right"></span></a>
+                            <a href="{{route('shop')}}" class="primary-btn">{{ __('label.shopnow') }} <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -42,7 +42,7 @@
                             <h2>Fall - Winter Collections 2030</h2>
                             <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
-                            <a href="#" class="primary-btn">{{ __('label.shopnow') }} <span class="arrow_right"></span></a>
+                            <a href="{{route('shop')}}" class="primary-btn">{{ __('label.shopnow') }} <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2>Clothing Collections 2030</h2>
-                        <a href="#">{{ __('label.shopnow') }}</a>
+                        <a href="{{route('shop')}}">{{ __('label.shopnow') }}</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2>Accessories</h2>
-                        <a href="#">{{ __('label.shopnow') }}</a>
+                        <a href="{{route('shop')}}">{{ __('label.shopnow') }}</a>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="banner__item__text">
                         <h2>Shoes Spring 2030</h2>
-                        <a href="#">{{ __('label.shopnow') }}</a>
+                        <a href="{{route('shop')}}">{{ __('label.shopnow') }}</a>
                     </div>
                 </div>
             </div>
@@ -126,17 +126,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
 
                 <div class="product__item">
-                    <a href="">
-                        <div class="product__item__pic set-bg" data-setbg="{{asset('storage/img')}}/product/{{$product->photo}}">
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                    </a>
-
+                    <div class="product__item__pic set-bg" data-setbg="{{asset('uploads')}}/{{$product->photo}}">
+                        <ul class="product__hover">
+                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
+                            <li><a href="#"><img src="{{asset('storage/img')}}/icon/compare.png" alt="">
+                                    <span>Compare</span></a></li>
+                            <li><a href="{{ route('detail', $product->id) }}"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
+                        </ul>
+                    </div>
                     <div class="product__item__text">
                         <h6>{{$product->name}}</h6>
                         @if ($product->instock == '0')
@@ -151,7 +148,7 @@
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <h5>{{$product->price}}</h5>
+                        <h5>${{$product->price}}</h5>
                         <div class="product__color__select">
                             <label for="pc-1">
                                 <input type="radio" id="pc-1">
@@ -173,12 +170,12 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                 <div class="product__item">
                     <a href="">
-                        <div class="product__item__pic set-bg" data-setbg="{{asset('public/uploads/')}}/{{$product->photo}}">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('uploads')}}/{{$product->photo}}">
                             <ul class="product__hover">
                                 <li><a href="#"><img src="{{asset('storage/img')}}/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="{{asset('storage/img')}}/icon/compare.png" alt="">
                                         <span>Compare</span></a></li>
-                                <li><a href="#"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
+                                <li><a href="{{ route('detail', $product->id) }}"><img src="{{asset('storage/img')}}/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                     </a>
@@ -196,7 +193,7 @@
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <h5>{{$product->price}}</h5>
+                        <h5>${{$product->price}}</h5>
                         <div class="product__color__select">
                             <label for="pc-1">
                                 <input type="radio" id="pc-1">
@@ -257,7 +254,7 @@
                             <p>Seconds</p>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">{{ __('label.shopnow') }}</a>
+                    <a href="{{route('shop')}}" class="primary-btn">{{ __('label.shopnow') }}</a>
                 </div>
             </div>
         </div>

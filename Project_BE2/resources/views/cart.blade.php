@@ -42,7 +42,7 @@
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
-                                            <img src="{{asset('storage/img')}}/shopping-cart/cart-1.jpg" alt="">
+                                            <img class="pic__cart__item" src="{{asset('uploads')}}/{{$productInCart->photo}}" alt="">
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>{{$productInCart->name}}
@@ -58,7 +58,7 @@
                                         </div>
                                     </td>
                                     <td class="cart__price">${{$productInCart->totalPrice}}</td>
-                                    <?php $total = $total +  $productInCart->totalPrice?> 
+                                    <?php $total = $total +  $productInCart->totalPrice ?>
                                     <td class="cart__close"><a href="{{ route('remove-from-cart', $productInCart->id) }}"><i class="fa fa-close"></i></a></td>
                                 </tr>
                                 @endforeach
@@ -88,10 +88,10 @@
             </div>
             <div class="col-lg-4">
                 <div class="cart__discount">
-                    <h6>{{ __('label.voucher') }}</h6>                                          
+                    <h6>{{ __('label.voucher') }}</h6>
                     <form action="{{route('useVoucher')}}" method="get">
-                        <input type="text" name= "voucher" placeholder="{{ __('label.voucher') }}">
-                        <input type="hidden" name= "total" value="{{$total}}" placeholder="Coupon code">
+                        <input type="text" name="voucher" placeholder="{{ __('label.voucher') }}">
+                        <input type="hidden" name="total" value="{{$total}}" placeholder="Coupon code">
                         <button type="submit">{{ __('label.apply') }}</button>
                     </form>
                 </div>

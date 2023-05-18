@@ -2351,6 +2351,10 @@ ol {
 	float: left;
 	margin-right: 30px;
 }
+.pic__cart__item {
+	height: 100;
+	width: 100;
+}
 
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__text {
 	overflow: hidden;

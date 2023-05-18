@@ -20,25 +20,25 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{$value->photo}}">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{asset('uploads')}}/{{$value->photo}}">
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{$value->photo}}">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{asset('uploads')}}/{{$value->photo}}">
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{$value->photo}}">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{asset('uploads')}}/{{$value->photo}}">
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{$value->photo}}">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{asset('uploads')}}/{{$value->photo}}">
                                     <i class="fa fa-play"></i>
                                 </div>
                             </a>
@@ -52,22 +52,22 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
+                                <img src="{{asset('uploads')}}/{{$value->photo}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-2" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
+                                <img src="{{asset('uploads')}}/{{$value->photo}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-3" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
+                                <img src="{{asset('uploads')}}/{{$value->photo}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-4" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{ asset('storage/img')}}/{{$value->photo}}" alt="">
+                                <img src="{{asset('uploads')}}//{{$value->photo}}" alt="">
                                 <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                             @if ($value->instock == '0')
                             <a href="#" class="disable">+ {{ __('label.soldout') }}</a>
                             @else
-                            <a href="{{ route('add-to-cart',$product->id) }}" class="add-cart">+ {{ __('label.addtocart') }}</a>
+                            <a href="{{ route('add-to-cart',$product[0]->id) }}" class="add-cart">+ {{ __('label.addtocart') }}</a>
                             @endif
                         </div>
                         <div class="product__details__btns__option">

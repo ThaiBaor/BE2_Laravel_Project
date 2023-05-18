@@ -9,8 +9,6 @@ use App\Http\Controllers\GoogleController;
  use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
-use App\Http\Controllers\ShopByCategoryController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductDetailController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
@@ -56,9 +54,6 @@ Route::get('/shop',[ShopController::class, 'getAllProducts'])->name('shop');
 //Route::get('/home',[HomeController::class, 'goHome'])->name('home');
 //Route::get('/shopbycategory',[ShopByCategoryController::class, 'goShopByCategory'])->name('shopbycategory');
 
-Route::get('/detail', function () {
-    return view('detail');
-});
 
 Route::get('/checkout', function () {
     return view('checkout');
@@ -130,7 +125,7 @@ Route::get('shop/category/{id}', [ShopController::class, 'getProductByCate'])->n
 
 // detail
 //Route::get('/detail', [ProductDetailController::class, 'getProductById'])->name('detail');
-Route::get('/detail/{id}', [ProductDetailController::class, 'getRelatedProducts'])->name('relatedproducts');
+Route::get('/detail/{id}', [ProductDetailController::class, 'getRelatedProducts'])->name('detail');
 //---------
 
 

@@ -42,7 +42,7 @@
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
-                                            <img src="{{asset('storage/img')}}/shopping-cart/cart-1.jpg" alt="">
+                                            <img class="pic__cart__item" src="{{asset('uploads')}}/{{$productInCart->photo}}" alt="">
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>{{$productInCart->name}}
