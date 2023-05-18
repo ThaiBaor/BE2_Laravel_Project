@@ -16,7 +16,7 @@ class CartController extends Controller
     {
         if (Auth::check()) {
             $id_user = Auth::user()->id;
-            $productsInCart = DB::table('cart_details')->join('products', 'products.id', '=', 'cart_details.id_product')->where('cart_details.id_user', '=', $id_user)->select('*',DB::raw('cart_details.quantity * products.price as totalPrice'))->get();
+            $productsInCart = DB::table('cart_details')->join('products', 'products.id', '=', 'cart_details.id_product')->where('cart_details.id_user', '=', $id_user)->select('*', DB::raw('cart_details.quantity * products.price as totalPrice'))->get();
             return view('cart', compact('productsInCart'));
         }
         return redirect('login');
@@ -57,7 +57,8 @@ class CartController extends Controller
         }
         return redirect('login');
     }
-    public function clearCart(){
+    public function clearCart()
+    {
         if (Auth::check()) {
             $id_user = Auth::user()->id;
             DB::table('cart_details')->where([['id_user', '=', $id_user]])->delete();
@@ -65,29 +66,31 @@ class CartController extends Controller
         }
         return redirect('login');
     }
-    public function updateCart(Request $request){
+    public function updateCart(Request $request)
+    {
         $id_user = Auth::user()->id;
-        $productsInCart = DB::table('cart_details')->where([['id_user','=',$id_user]])->get();
-        foreach($productsInCart as $productInCart){
+        $productsInCart = DB::table('cart_details')->where([['id_user', '=', $id_user]])->get();
+        foreach ($productsInCart as $productInCart) {
             //$str = 'quantity_'+$productInCart->id;
-            DB::table('cart_details')->where([['id_user','=',$id_user], ['id_product', '=', $productInCart->id]])->update(['quantity' => $request->quantity]);
+            DB::table('cart_details')->where([['id_user', '=', $id_user], ['id_product', '=', $productInCart->id]])->update(['quantity' => $request->quantity]);
         }
         dd($request);
         return redirect('home');
     }
-    public function increaseQuantity(){
-
+    public function increaseQuantity()
+    {
     }
-    public function useVoucher(Request $request){
+    public function useVoucher(Request $request)
+    {
         $voucher = Voucher::where('code_voucher', '=', $request->voucher)->get();
-        if(!($voucher->isEmpty())){
+        $id_user = Auth::user()->id;
+        $productsInCart = DB::table('cart_details')->join('products', 'products.id', '=', 'cart_details.id_product')->where('cart_details.id_user', '=', $id_user)->select('*', DB::raw('cart_details.quantity * products.price as totalPrice'))->get();
+        if (!($voucher->isEmpty())) {
             $reduce = $voucher[0]->reduce;
-            $id_user = Auth::user()->id;
-            $productsInCart = DB::table('cart_details')->join('products', 'products.id', '=', 'cart_details.id_product')->where('cart_details.id_user', '=', $id_user)->select('*',DB::raw('cart_details.quantity * products.price as totalPrice'))->get();
             $total = $request->total;
-            $total = $total * ($reduce / 100 );
+            $total = $total * ($reduce / 100);
             return view('cartvoucher', ['productsInCart' => $productsInCart, 'voucher' => $voucher, 'total' => $total]);
         }
-        return view('home');
+        return view('cart', compact('productsInCart'));
     }
 }
