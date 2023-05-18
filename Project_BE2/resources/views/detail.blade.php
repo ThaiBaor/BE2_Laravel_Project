@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-9">
-                @foreach($products as $value)
+                    @foreach($products as $value)
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__pic__item">
@@ -79,7 +79,7 @@
     </div>
     <div class="product__details__content">
         <div class="container">
-        @foreach($products as $value)
+            @foreach($products as $value)
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <div class="product__details__text">
@@ -92,9 +92,9 @@
                             <i class="fa fa-star-o"></i>
                             <span> - 5 Reviews</span>
                         </div>
-                        
+
                         <h3>{{$value->price}}<span></span></h3>
-                        
+
                         <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
                             cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
                             with placket.</p>
@@ -139,7 +139,11 @@
                                     <input type="text" value="1">
                                 </div>
                             </div>
-                            <a href="#" class="primary-btn">add to cart</a>
+                            @if ($value->instock == '0')
+                            <a href="#" class="disable">+ {{ __('label.soldout') }}</a>
+                            @else
+                            <a href="{{ route('add-to-cart',$product->id) }}" class="add-cart">+ {{ __('label.addtocart') }}</a>
+                            @endif
                         </div>
                         <div class="product__details__btns__option">
                             <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
